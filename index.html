@@ -358,16 +358,23 @@
     color: var(--accent);
     font-weight: 500;
   }
+  .credit-list .year.ongoing {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
   .credit-list .item {
     font-size: 1.1rem;
     line-height: 1.4;
+    display: block;
   }
   .credit-list .item .venue {
     color: var(--ink-soft);
     font-style: italic;
     font-size: 0.95rem;
     display: block;
-    margin-top: 0.15rem;
+    margin-top: 0.25rem;
   }
 
   /* ===== Studied under ===== */
@@ -547,7 +554,15 @@
     }
     .featured-details { border-left: none; padding-left: 0; border-top: 1px solid rgba(244,239,230,0.25); padding-top: 1.5rem; }
     .footer-links { align-items: flex-start; }
-    .credit-list li { grid-template-columns: 1fr; gap: 0.25rem; }
+    .credit-list li {
+      grid-template-columns: 1fr;
+      gap: 0.4rem;
+      padding: 1rem 0;
+    }
+    .credit-list .year {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+    }
     .hero-meta { gap: 1.25rem; }
   }
 </style>
@@ -617,12 +632,12 @@
         <span class="item">The Hollywood Comedy Store · Potluck Show<span class="venue">Selected performer, Los Angeles</span></span>
       </li>
       <li>
-        <span class="year">—</span>
-        <span class="item">Tacoma Comedy Club<span class="venue">Host & feature</span></span>
+        <span class="year ongoing">Ongoing</span>
+        <span class="item">Tacoma Comedy Club<span class="venue">Host &amp; feature</span></span>
       </li>
       <li>
-        <span class="year">—</span>
-        <span class="item">Emerald City Comedy Club<span class="venue">Host & feature, Seattle</span></span>
+        <span class="year ongoing">Ongoing</span>
+        <span class="item">Emerald City Comedy Club<span class="venue">Host &amp; feature, Seattle</span></span>
       </li>
       <li>
         <span class="year">2012</span>
