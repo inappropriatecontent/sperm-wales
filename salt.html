@@ -51,7 +51,15 @@
     gap: 2rem;
     flex-wrap: wrap;
   }
-  .brand { display: flex; align-items: baseline; gap: 0.75rem; }
+  .brand {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s;
+  }
+  .brand:hover { opacity: 0.7; }
   .brand-mark {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1.85rem;
@@ -207,6 +215,14 @@
   .about { background: var(--cream); }
   .about p { font-size: 1.1rem; margin-bottom: 1.2rem; max-width: 750px; }
   .about p.lead { font-size: 1.25rem; }
+  .about a.inline-link {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 1px;
+    transition: color 0.2s;
+  }
+  .about a.inline-link:hover { color: var(--accent); }
   .pullquote {
     border-left: 4px solid var(--accent);
     padding: 1.5rem 0 1.5rem 2rem;
@@ -351,10 +367,10 @@
 </div>
 
 <header class="site-header">
-  <div class="brand">
+  <a class="brand" href="index.html">
     <span class="brand-mark">J'MYLE KORETZ</span>
     <span class="brand-tag">stand-up comedy</span>
-  </div>
+  </a>
   <nav class="primary">
     <a href="#show">the show</a>
     <a href="#venue">where</a>
@@ -405,7 +421,7 @@
       "I joined the Navy and spent four years on the crew of a 224-foot warship made out of wood — the boat, and the Sailors, too."
     </div>
 
-    <p>These days I'm based in Seattle, where I host and feature at Tacoma Comedy Club and Emerald City Comedy Club, and perform from San Francisco to Vancouver. I was selected twice for The Hollywood Comedy Store's Potluck Show, and have studied under <strong>Alice Fraser</strong> (The Bugle), <strong>Tiff Stevenson</strong> (HBO's <em>Avenue 5</em>), and <strong>Andrew Frank</strong> (Great Salt Lake Fringe, 2022).</p>
+    <p>The rest of the picture — Seattle home base, regular club work, the people I've studied under — lives on <a class="inline-link" href="index.html">the main site</a>.</p>
   </div>
 </section>
 
@@ -464,6 +480,7 @@
     </div>
     <div>
       <h4>Elsewhere</h4>
+      <a href="index.html">More about J'myle →</a>
       <a href="https://www.gslfringe.org/" target="_blank" rel="noopener">Official GSL Fringe</a>
       <a href="https://www.instagram.com/theinappropriatecontent/" target="_blank" rel="noopener">Instagram</a>
       <a href="https://www.facebook.com/inappropriatecontent/" target="_blank" rel="noopener">Facebook</a>
