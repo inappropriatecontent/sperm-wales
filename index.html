@@ -163,6 +163,14 @@
     color: var(--ink);
     font-weight: 500;
   }
+  .hero-meta a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 1px;
+    transition: color 0.2s;
+  }
+  .hero-meta a:hover { color: var(--accent); }
 
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
@@ -283,6 +291,12 @@
     letter-spacing: -0.03em;
     font-style: italic;
   }
+  .featured h2 a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.25s ease;
+  }
+  .featured h2 a:hover { color: var(--accent); }
   .featured h2 .quote {
     color: var(--accent);
     font-style: normal;
@@ -317,6 +331,23 @@
     color: rgba(244, 239, 230, 0.85);
     font-style: italic;
     max-width: 36rem;
+  }
+  .featured-link {
+    display: inline-block;
+    margin-top: 2rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 3px;
+    transition: all 0.2s ease;
+  }
+  .featured-link:hover {
+    color: var(--paper);
+    border-bottom-color: var(--paper);
   }
 
   /* ===== Credits ===== */
@@ -376,6 +407,14 @@
     display: block;
     margin-top: 0.25rem;
   }
+  .credit-list .item a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 1px;
+    transition: color 0.2s;
+  }
+  .credit-list .item a:hover { color: var(--accent); }
 
   /* ===== Studied under ===== */
   .study {
@@ -582,7 +621,7 @@
     <div class="hero-meta">
       <span><strong>Based</strong> &nbsp; Seattle, WA</span>
       <span><strong>Booking</strong> &nbsp; Available 2026</span>
-      <span><strong>Next</strong> &nbsp; Great Salt Lake Fringe · Jul 2026</span>
+      <span><strong>Next</strong> &nbsp; <a href="salt.html">Great Salt Lake Fringe · Jul 2026</a></span>
     </div>
   </div>
   <div class="hero-portrait">
@@ -593,9 +632,9 @@
 <section class="about" id="about">
   <h2>The <em>working</em> bio.</h2>
   <div class="about-body">
-    <p>J'myle has hosted and featured at the Tacoma Comedy Club and Emerald City Comedy Club in Seattle. He was selected for The Hollywood Comedy Store's Potluck Show — twice, in case you missed it the first time.</p>
-    <p>His comedy is autobiographical without being indulgent and clever without being cold. He writes the kind of material that earns the laugh on the second beat, then steals an extra one on the third. He has studied under <strong>Alice Fraser</strong>, <strong>Tiff Stevenson</strong>, and <strong>Andrew Frank</strong>.</p>
-    <p>He first stepped on a stand-up stage at Wiseguys Comedy Club's Trolley Square location in 2012. He has been refining the craft ever since.</p>
+    <p>J'myle writes the kind of material that earns the laugh on the second beat, then steals an extra one on the third. Autobiographical without being indulgent. Clever without being cold.</p>
+    <p>The short version: Salt Lake kid, four years in the Navy on a wooden minesweeper in the Western Pacific, now based in Seattle. The long version is an hour of stand-up.</p>
+    <p>He hosts and features around the Pacific Northwest, has performed twice at The Hollywood Comedy Store, and has studied under Alice Fraser, Tiff Stevenson, and Andrew Frank. Selected credits are below.</p>
   </div>
 </section>
 
@@ -604,8 +643,9 @@
     <div class="section-label">Now Playing</div>
     <div class="featured-grid">
       <div>
-        <h2><span class="quote">"</span>Twink or<br>Swim<span class="quote">"</span></h2>
+        <h2><a href="salt.html"><span class="quote">"</span>Twink or<br>Swim<span class="quote">"</span></a></h2>
         <p class="featured-blurb">An hour of stand-up, accepted into the 2026 Great Salt Lake Fringe Festival. It is exactly what it sounds like, and also not at all.</p>
+        <a href="salt.html" class="featured-link">Read more about the show →</a>
       </div>
       <div class="featured-details">
         <dl>
@@ -625,7 +665,7 @@
     <ul class="credit-list">
       <li>
         <span class="year">2026</span>
-        <span class="item">Great Salt Lake Fringe Festival<span class="venue">Solo hour: "Twink or Swim"</span></span>
+        <span class="item"><a href="salt.html">Great Salt Lake Fringe Festival</a><span class="venue">Solo hour: "Twink or Swim"</span></span>
       </li>
       <li>
         <span class="year">×2</span>
@@ -668,6 +708,7 @@
   <div class="footer-grid">
     <div class="footer-name">J'myle <em>Koretz</em></div>
     <div class="footer-links">
+      <a href="salt.html">Twink or Swim → GSL Fringe 2026</a>
       <a href="https://instagram.com/theinappropriatecontent" target="_blank" rel="noopener">Instagram → @theinappropriatecontent</a>
       <a href="https://facebook.com/inappropriatecontent" target="_blank" rel="noopener">Facebook → inappropriatecontent</a>
       <a href="mailto:inappropriatecontent@gmail.com">Email → inappropriatecontent@gmail.com</a>
