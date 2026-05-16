@@ -350,6 +350,88 @@
     border-bottom-color: var(--paper);
   }
 
+  /* ===== Tape (bookers) ===== */
+  .tape-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .tape-section h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .tape-section h2 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .tape-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+  .tape-card {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.25rem;
+  }
+  .tape-card .kind {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+  }
+  .tape-card .name {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.5rem;
+    line-height: 1.1;
+    margin-bottom: 0.75rem;
+  }
+  .tape-card p {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+  .tape-cta-row {
+    grid-column: 1 / -1;
+    margin-top: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px dashed rgba(26, 24, 20, 0.2);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem 2rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .tape-link {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 3px;
+    transition: all 0.2s ease;
+  }
+  .tape-link:hover {
+    color: var(--accent);
+  }
+  .tape-cta-row .for-bookers {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
   /* ===== Credits ===== */
   .credits {
     display: grid;
@@ -587,10 +669,12 @@
     .booking { padding: 4rem 1.25rem; }
     .featured { padding: 4rem 1.25rem; }
     footer { padding: 3rem 1.25rem 1.5rem; }
-    .about, .credits, .featured-grid, .footer-grid {
+    .about, .credits, .featured-grid, .footer-grid, .tape-section {
       grid-template-columns: 1fr;
       gap: 2rem;
     }
+    .tape-body { grid-template-columns: 1fr; gap: 1.5rem; }
+    .tape-cta-row { justify-content: flex-start; }
     .featured-details { border-left: none; padding-left: 0; border-top: 1px solid rgba(244,239,230,0.25); padding-top: 1.5rem; }
     .footer-links { align-items: flex-start; }
     .credit-list li {
@@ -659,6 +743,31 @@
   </div>
 </section>
 
+<section class="tape-section" id="tape">
+  <div>
+    <div class="section-label">Tape</div>
+    <h2>For <em>bookers</em>.</h2>
+  </div>
+  <div>
+    <div class="tape-body">
+      <div class="tape-card">
+        <div class="kind">Tape 01 · Blue</div>
+        <div class="name">Club set</div>
+        <p>As performed. Headline or feature material for adult rooms — clubs, late festival slots.</p>
+      </div>
+      <div class="tape-card">
+        <div class="kind">Tape 02 · Clean</div>
+        <div class="name">Clean set</div>
+        <p>Corporate-safe, no profanity. Same voice, room-appropriate for college, corporate, and private events.</p>
+      </div>
+      <div class="tape-cta-row">
+        <a href="videos.html" class="tape-link">View tape →</a>
+        <span class="for-bookers">Unlisted · share with your team</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="credits" id="credits">
   <h2>Selected <em>credits</em>.</h2>
   <div>
@@ -709,6 +818,7 @@
     <div class="footer-name">J'myle <em>Koretz</em></div>
     <div class="footer-links">
       <a href="salt.html">Twink or Swim → GSL Fringe 2026</a>
+      <a href="videos.html">Tape → for bookers</a>
       <a href="https://instagram.com/theinappropriatecontent" target="_blank" rel="noopener">Instagram → @theinappropriatecontent</a>
       <a href="https://facebook.com/inappropriatecontent" target="_blank" rel="noopener">Facebook → inappropriatecontent</a>
       <a href="mailto:inappropriatecontent@gmail.com">Email → inappropriatecontent@gmail.com</a>
