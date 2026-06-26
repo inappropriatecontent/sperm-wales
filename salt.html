@@ -416,56 +416,6 @@
     max-width: 760px;
   }
 
-  /* ===== Tickets CTA ===== */
-  .cta { background: var(--field); color: #fff; text-align: center; }
-  .cta .section-eyebrow { color: #7fd0f5; }
-  .cta .section-title { color: #fff; }
-  .cta p { font-size: 1.2rem; max-width: 620px; margin: 0 auto 2.5rem; color: rgba(255, 255, 255, 0.88); }
-  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-  .cta-buttons a {
-    display: inline-block;
-    padding: 1rem 2rem;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.9rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    transition: transform 0.15s, box-shadow 0.15s;
-  }
-  .cta-buttons .primary {
-    background: var(--accent);
-    color: #fff;
-    border: 2px solid var(--accent);
-    box-shadow: 5px 5px 0 #fff;
-  }
-  .cta-buttons .primary:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 7px 7px 0 #fff;
-  }
-  .cta-buttons .secondary {
-    background: transparent;
-    color: #fff;
-    border: 2px solid #fff;
-  }
-  .cta-buttons .secondary:hover { background: #fff; color: var(--field); }
-  .cta-microcopy {
-    margin-top: 1.25rem;
-    font-size: 0.85rem;
-    font-style: italic;
-    color: rgba(255, 255, 255, 0.6);
-    max-width: 100%;
-  }
-  .on-sale-callout {
-    display: inline-block;
-    margin-bottom: 1.5rem;
-    padding: 0.5rem 1.1rem;
-    background: var(--accent);
-    color: #fff;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.1rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-  }
   .ext-icon {
     display: inline-block;
     font-style: normal;
@@ -558,6 +508,118 @@
     * { animation: none !important; transition: none !important; }
     html { scroll-behavior: auto; }
   }
+  /* ===== Ticket pre-sale modal ===== */
+  .ticket-modal[hidden] { display: none; }
+  .ticket-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+  }
+  .ticket-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(11, 38, 58, 0.78);
+    backdrop-filter: blur(3px);
+    animation: tm-fade 0.25s ease both;
+  }
+  .ticket-modal-card {
+    position: relative;
+    z-index: 1;
+    background: var(--paper);
+    border: 3px solid var(--ink);
+    box-shadow: 14px 14px 0 var(--accent);
+    max-width: 540px;
+    width: 100%;
+    padding: 2.75rem 2.5rem 2.25rem;
+    text-align: center;
+    animation: tm-pop 0.3s cubic-bezier(.2,.8,.2,1) both;
+  }
+  .ticket-modal-close {
+    position: absolute;
+    top: 0.6rem;
+    right: 0.9rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 2rem;
+    line-height: 1;
+    color: var(--ink-soft);
+    font-family: 'Bebas Neue', sans-serif;
+    transition: color 0.2s;
+  }
+  .ticket-modal-close:hover { color: var(--accent); }
+  .tm-eyebrow {
+    font-family: 'Caveat', cursive;
+    color: var(--accent);
+    font-size: 1.5rem;
+    transform: rotate(-2deg);
+    display: inline-block;
+    margin-bottom: 0.5rem;
+  }
+  .tm-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.4rem, 8vw, 3.6rem);
+    line-height: 0.92;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    margin-bottom: 1.1rem;
+  }
+  .tm-title .accent { color: var(--accent); }
+  .tm-body {
+    font-size: 1.08rem;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    max-width: 27rem;
+    margin: 0 auto 1.75rem;
+  }
+  .tm-body em { color: var(--ink); font-style: italic; }
+  .tm-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .tm-actions a, .tm-actions button {
+    font-family: 'Source Sans 3', sans-serif;
+    padding: 0.85rem 1.6rem;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.15s, box-shadow 0.15s, background 0.2s, color 0.2s;
+  }
+  .tm-primary {
+    background: var(--accent);
+    color: #fff;
+    border: 2px solid var(--accent);
+    box-shadow: 4px 4px 0 var(--ink);
+  }
+  .tm-primary:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--ink); }
+  .tm-secondary {
+    background: transparent;
+    color: var(--ink);
+    border: 2px solid var(--ink);
+  }
+  .tm-secondary:hover { background: var(--ink); color: var(--paper); }
+  .tm-foot {
+    margin-top: 1.6rem;
+    padding-top: 1.1rem;
+    border-top: 1px dashed var(--rule);
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+    color: var(--ink-soft);
+  }
+  @keyframes tm-fade { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes tm-pop {
+    from { opacity: 0; transform: translateY(14px) scale(0.97); }
+    to { opacity: 1; transform: none; }
+  }
 </style>
 </head>
 <body>
@@ -577,7 +639,7 @@
     <a href="#watch">watch</a>
     <a href="#venue">where</a>
     <span class="tickets-wrap">
-      <a href="#tickets" class="tickets-btn">Get Tickets</a>
+      <a href="https://tickets.greatsaltlakefringe.org/" class="tickets-btn" target="_blank" rel="noopener">Get Tickets <span class="ext-icon" aria-hidden="true">↗</span></a>
       <span class="tickets-caption">July 1!</span>
     </span>
   </nav>
@@ -696,21 +758,6 @@
   </div>
 </section>
 
-<section class="cta" id="tickets">
-  <div class="container">
-    <div class="section-eyebrow">come see the show</div>
-    <h2 class="section-title">Get tickets.</h2>
-    <span class="on-sale-callout">Tickets on sale July 1</span>
-    <p>Three performances at the Great Salt Lake Fringe 2026 — Alliance Theatre Black Box, Trolley Square. Tickets go through the official Fringe box office. Follow along on socials for behind-the-scenes Navy photos, clips, and the occasional unhinged announcement.</p>
-    <div class="cta-buttons">
-      <a href="https://tickets.greatsaltlakefringe.org/" class="primary" target="_blank" rel="noopener">Buy tickets <span class="ext-icon" aria-hidden="true">↗</span></a>
-      <a href="https://www.instagram.com/theinappropriatecontent/" class="secondary" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://www.facebook.com/inappropriatecontent/" class="secondary" target="_blank" rel="noopener">Facebook</a>
-    </div>
-    <p class="cta-microcopy">Opens the official Great Salt Lake Fringe box office in a new tab.</p>
-  </div>
-</section>
-
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
@@ -724,7 +771,7 @@
       <a href="#show">About the show</a>
       <a href="#watch">Watch</a>
       <a href="#venue">Where &amp; when</a>
-      <a href="#tickets">Tickets</a>
+      <a href="https://tickets.greatsaltlakefringe.org/" target="_blank" rel="noopener">Tickets <span class="ext-icon" aria-hidden="true">↗</span></a>
     </div>
     <div>
       <h4>Elsewhere</h4>
@@ -745,6 +792,72 @@
     Twink or Swim is a participating show in the Great Salt Lake Fringe 2026; this site is operated independently by J'myle Koretz. For the official festival lineup, full schedule, and ticketing, visit <a href="https://www.gslfringe.org/" target="_blank" rel="noopener" style="display: inline;">gslfringe.org</a>. The Great Salt Lake Fringe name and branding belong to the festival.
   </div>
 </footer>
+
+<div class="ticket-modal" id="ticketModal" hidden>
+  <div class="ticket-modal-backdrop" data-close></div>
+  <div class="ticket-modal-card" role="dialog" aria-modal="true" aria-labelledby="tm-title" aria-describedby="tm-body">
+    <button class="ticket-modal-close" type="button" data-close aria-label="Close">&times;</button>
+    <div class="tm-eyebrow">mark your calendar</div>
+    <h2 class="tm-title" id="tm-title">Tickets go live<br><span class="accent">July 1</span></h2>
+    <p class="tm-body" id="tm-body">The Great Salt Lake Fringe 2026 box office opens <strong>July 1</strong>. Until then, head to the official festival site for lineup news — and check back here on the 1st to grab seats to <em>Twink or Swim</em>.</p>
+    <div class="tm-actions">
+      <a class="tm-primary" href="https://www.gslfringe.org/" target="_blank" rel="noopener">Visit gslfringe.org <span class="ext-icon" aria-hidden="true">↗</span></a>
+      <button class="tm-secondary" type="button" data-close>Got it</button>
+    </div>
+    <p class="tm-foot">Three performances · Alliance Theatre Black Box · Trolley Square</p>
+  </div>
+</div>
+
+<script>
+(function () {
+  // Pre-sale ticket gate — the 2026 box office goes live July 1 (Mountain Time).
+  // Before then, clicks on the ticket links open the modal instead of sending people
+  // to last year's box office. On/after July 1 this self-disables and the links pass
+  // straight through. To remove entirely after the festival, delete this <script>
+  // and the #ticketModal block above.
+  var SALES_LIVE = new Date('2026-07-01T00:00:00-06:00').getTime();
+  if (Date.now() >= SALES_LIVE) return;
+
+  var modal = document.getElementById('ticketModal');
+  if (!modal) return;
+  var lastFocus = null;
+
+  function open(e) {
+    if (e) e.preventDefault();
+    lastFocus = document.activeElement;
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    var closeBtn = modal.querySelector('.ticket-modal-close');
+    if (closeBtn) closeBtn.focus();
+    document.addEventListener('keydown', onKey);
+  }
+  function close() {
+    modal.hidden = true;
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', onKey);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function onKey(e) {
+    if (e.key === 'Escape') { close(); return; }
+    if (e.key === 'Tab') {
+      var f = modal.querySelectorAll('a[href], button');
+      if (!f.length) return;
+      var first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  }
+
+  // Intercept any link pointing at the box office.
+  var links = document.querySelectorAll('a[href*="tickets.greatsaltlakefringe.org"]');
+  Array.prototype.forEach.call(links, function (a) { a.addEventListener('click', open); });
+
+  // Close on backdrop, the X, or "Got it".
+  Array.prototype.forEach.call(modal.querySelectorAll('[data-close]'), function (el) {
+    el.addEventListener('click', close);
+  });
+})();
+</script>
 
 </body>
 </html>
