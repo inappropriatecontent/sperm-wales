@@ -4,18 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Twink or Swim — J'myle Koretz at the Great Salt Lake Fringe</title>
+<meta name="description" content="Twink or Swim — a one-person comedy by J'myle Koretz. Three performances at the Great Salt Lake Fringe 2026, Alliance Theatre Black Box, Trolley Square, Salt Lake City.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #1a2740;
-    --ink-soft: #2c3a55;
-    --cream: #f4ede0;
-    --cream-deep: #ebe1cc;
-    --accent: #e63946;
-    --accent-dark: #b82a36;
-    --rule: rgba(26, 39, 64, 0.18);
+    /* white + festival-blue neighborhood (adjacent, not identical) */
+    --paper: #f6f9fc;        /* near-white, faint cool cast */
+    --paper-deep: #e7f0f7;   /* light blue-grey panel */
+    --ink: #122947;          /* deep blue — primary type on light */
+    --ink-soft: #46597b;     /* muted blue-slate */
+    --field: #0f4d77;        /* deep ocean blue — inverted section bg */
+    --field-deep: #0b3c5e;
+    --accent: #0e8fce;       /* page blue — a touch deeper than the festival cyan */
+    --accent-dark: #0b6fa3;
+    --rule: rgba(18, 41, 71, 0.15);
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -23,15 +27,15 @@
 
   body {
     font-family: 'Source Sans 3', Georgia, serif;
-    background: var(--cream);
+    background: var(--paper);
     color: var(--ink);
     line-height: 1.6;
     overflow-x: hidden;
   }
 
   .unofficial-strip {
-    background: var(--accent);
-    color: white;
+    background: var(--field);
+    color: #fff;
     text-align: center;
     padding: 0.55rem 1rem;
     font-size: 0.78rem;
@@ -39,10 +43,10 @@
     text-transform: uppercase;
     font-weight: 700;
   }
-  .unofficial-strip a { color: white; text-decoration: underline; text-underline-offset: 3px; }
+  .unofficial-strip a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
 
   header.site-header {
-    background: var(--cream);
+    background: var(--paper);
     border-bottom: 1px solid var(--rule);
     padding: 1.4rem 2rem;
     display: flex;
@@ -84,19 +88,19 @@
   }
   nav.primary a:hover { color: var(--accent); }
   nav.primary .tickets-btn {
-    background: var(--ink);
-    color: var(--cream);
+    background: var(--accent);
+    color: #fff;
     padding: 0.6rem 1.4rem;
-    border: 2px solid var(--ink);
+    border: 2px solid var(--accent);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-size: 0.85rem;
-    box-shadow: 4px 4px 0 var(--accent);
+    box-shadow: 4px 4px 0 var(--ink);
     transition: transform 0.15s, box-shadow 0.15s;
   }
   nav.primary .tickets-btn:hover {
     transform: translate(-2px, -2px);
-    box-shadow: 6px 6px 0 var(--accent);
+    box-shadow: 6px 6px 0 var(--ink);
   }
   .tickets-wrap {
     position: relative;
@@ -110,26 +114,28 @@
     color: var(--accent);
     font-size: 1.3rem;
     transform: rotate(-4deg);
-    background: var(--cream);
+    background: var(--paper);
     padding: 0.3rem 0.8rem;
     pointer-events: none;
     white-space: nowrap;
     z-index: 2;
   }
 
+  /* ===== Hero (now white-field, blue type) ===== */
   .hero {
-    background: var(--ink);
-    color: var(--cream);
+    background: var(--paper);
+    color: var(--ink);
     padding: 5rem 2rem;
     position: relative;
     overflow: hidden;
+    border-bottom: 1px solid var(--rule);
   }
   .hero::before {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(circle at 20% 30%, rgba(230, 57, 70, 0.12) 0%, transparent 40%),
-                      radial-gradient(circle at 80% 70%, rgba(244, 237, 224, 0.08) 0%, transparent 40%);
+    background-image: radial-gradient(circle at 18% 28%, rgba(14, 143, 206, 0.10) 0%, transparent 42%),
+                      radial-gradient(circle at 82% 72%, rgba(15, 77, 119, 0.07) 0%, transparent 42%);
     pointer-events: none;
   }
   .hero-inner {
@@ -156,12 +162,13 @@
     line-height: 0.9;
     letter-spacing: 0.01em;
     margin-bottom: 1.5rem;
+    color: var(--ink);
   }
   .hero-title .accent { color: var(--accent); }
   .hero-byline {
     font-size: 1.25rem;
     font-style: italic;
-    color: var(--cream-deep);
+    color: var(--ink-soft);
     margin-bottom: 2.5rem;
   }
   .hero-meta {
@@ -169,7 +176,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem 2.5rem;
     padding-top: 2rem;
-    border-top: 1px solid rgba(244, 237, 224, 0.2);
+    border-top: 1px solid var(--rule);
   }
   .hero-meta .label {
     font-size: 0.72rem;
@@ -182,6 +189,7 @@
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1.4rem;
     letter-spacing: 0.03em;
+    color: var(--ink);
   }
 
   .hero-photo {
@@ -194,7 +202,7 @@
     width: 100%;
     height: auto;
     display: block;
-    border: 6px solid var(--cream);
+    border: 6px solid #fff;
     box-shadow: 12px 12px 0 var(--accent);
   }
   .hero-photo .caption {
@@ -205,7 +213,7 @@
     color: var(--accent);
     font-size: 1.3rem;
     transform: rotate(-4deg);
-    background: var(--cream);
+    background: var(--paper);
     padding: 0.3rem 0.8rem;
   }
 
@@ -231,7 +239,7 @@
   }
 
   /* ===== Announcement video ===== */
-  .announce { background: var(--cream-deep); }
+  .announce { background: var(--paper-deep); }
   .announce .container { max-width: 900px; text-align: center; }
   .announce .section-title { margin-bottom: 2.5rem; }
   .video-wrap {
@@ -247,7 +255,7 @@
     position: relative;
     aspect-ratio: 16 / 9;
     background: var(--ink);
-    border: 6px solid var(--cream);
+    border: 6px solid #fff;
     box-shadow: 12px 12px 0 var(--accent);
     overflow: hidden;
   }
@@ -267,7 +275,7 @@
     color: var(--accent);
     font-size: 1.5rem;
     transform: rotate(-4deg);
-    background: var(--cream-deep);
+    background: var(--paper-deep);
     padding: 0.3rem 0.9rem;
     z-index: 2;
   }
@@ -279,7 +287,7 @@
     margin: 2rem auto 0;
   }
 
-  .about { background: var(--cream); }
+  .about { background: var(--paper); }
   .about p { font-size: 1.1rem; margin-bottom: 1.2rem; max-width: 750px; }
   .about p.lead { font-size: 1.25rem; }
   .pullquote {
@@ -291,68 +299,128 @@
     line-height: 1.15;
     letter-spacing: 0.02em;
     max-width: 800px;
+    color: var(--ink);
   }
 
   .homecoming {
-    background: var(--ink);
-    color: var(--cream);
+    background: var(--field);
+    color: #fff;
     text-align: center;
     padding: 6rem 2rem;
   }
   .homecoming .container { max-width: 800px; }
-  .homecoming .section-title { color: var(--cream); margin-bottom: 1.5rem; }
+  .homecoming .section-eyebrow { color: #7fd0f5; }
+  .homecoming .section-title { color: #fff; margin-bottom: 1.5rem; }
   .homecoming p {
     font-size: 1.2rem;
-    color: var(--cream-deep);
+    color: rgba(255, 255, 255, 0.88);
     max-width: 650px;
     margin: 0 auto;
   }
   .homecoming p + p { margin-top: 1.2rem; }
+  .homecoming em { color: #afe1f7; font-style: italic; }
 
-  .venues { background: var(--cream-deep); }
-  .venue { border-top: 3px solid var(--ink); padding-top: 1.5rem; max-width: 700px; }
-  .venue h3 {
+  /* ===== Where / showtimes ===== */
+  .venues { background: var(--paper-deep); }
+  .venues .container { max-width: 1100px; }
+
+  .show-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  @media (max-width: 820px) {
+    .show-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  }
+
+  .showtimes { list-style: none; }
+  .showtimes li {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .showtimes li:first-child { border-top: 3px solid var(--ink); }
+  .showtimes .day {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.7rem;
+    letter-spacing: 0.03em;
+    line-height: 1;
+  }
+  .showtimes .day small {
+    display: block;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-top: 0.25rem;
+  }
+  .showtimes .time {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.7rem;
+    letter-spacing: 0.04em;
+    color: var(--accent-dark);
+    white-space: nowrap;
+  }
+
+  .venue-card {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-top: 4px solid var(--accent);
+    padding: 1.75rem;
+    box-shadow: 8px 8px 0 rgba(14, 143, 206, 0.12);
+  }
+  .venue-card h3 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1.8rem;
     letter-spacing: 0.03em;
     margin-bottom: 0.8rem;
   }
-  .venue address {
+  .venue-card address {
     font-style: normal;
     font-size: 1.05rem;
     line-height: 1.7;
+    color: var(--ink);
   }
-  .venue .vnote {
+  .venue-card .vnote {
     font-style: italic;
     color: var(--ink-soft);
-    margin-top: 0.8rem;
+    margin-top: 1rem;
     font-size: 0.95rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--rule);
   }
   .on-sale-badge {
     display: inline-block;
-    margin-top: 1.2rem;
+    margin-top: 1.5rem;
     padding: 0.4rem 0.9rem;
     background: var(--ink);
-    color: var(--cream);
+    color: #fff;
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
   }
-  .on-sale-badge .accent { color: var(--accent); }
+  .on-sale-badge .accent { color: #7fd0f5; }
   .venues-disclaimer {
     margin-top: 2.5rem;
     padding: 1rem 1.5rem;
-    background: var(--accent);
-    color: white;
+    background: var(--field);
+    color: #fff;
     font-size: 0.95rem;
-    border-left: 4px solid var(--accent-dark);
-    max-width: 700px;
+    border-left: 4px solid var(--accent);
+    max-width: 760px;
   }
 
-  .cta { background: var(--ink); color: var(--cream); text-align: center; }
-  .cta .section-title { color: var(--cream); }
-  .cta p { font-size: 1.2rem; max-width: 600px; margin: 0 auto 2.5rem; color: var(--cream-deep); }
+  /* ===== Tickets CTA ===== */
+  .cta { background: var(--field); color: #fff; text-align: center; }
+  .cta .section-eyebrow { color: #7fd0f5; }
+  .cta .section-title { color: #fff; }
+  .cta p { font-size: 1.2rem; max-width: 620px; margin: 0 auto 2.5rem; color: rgba(255, 255, 255, 0.88); }
   .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
   .cta-buttons a {
     display: inline-block;
@@ -366,25 +434,25 @@
   }
   .cta-buttons .primary {
     background: var(--accent);
-    color: white;
+    color: #fff;
     border: 2px solid var(--accent);
-    box-shadow: 5px 5px 0 var(--cream);
+    box-shadow: 5px 5px 0 #fff;
   }
   .cta-buttons .primary:hover {
     transform: translate(-2px, -2px);
-    box-shadow: 7px 7px 0 var(--cream);
+    box-shadow: 7px 7px 0 #fff;
   }
   .cta-buttons .secondary {
     background: transparent;
-    color: var(--cream);
-    border: 2px solid var(--cream);
+    color: #fff;
+    border: 2px solid #fff;
   }
-  .cta-buttons .secondary:hover { background: var(--cream); color: var(--ink); }
+  .cta-buttons .secondary:hover { background: #fff; color: var(--field); }
   .cta-microcopy {
     margin-top: 1.25rem;
     font-size: 0.85rem;
     font-style: italic;
-    color: rgba(244, 237, 224, 0.65);
+    color: rgba(255, 255, 255, 0.6);
     max-width: 100%;
   }
   .on-sale-callout {
@@ -392,7 +460,7 @@
     margin-bottom: 1.5rem;
     padding: 0.5rem 1.1rem;
     background: var(--accent);
-    color: white;
+    color: #fff;
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1.1rem;
     letter-spacing: 0.14em;
@@ -407,13 +475,42 @@
     transform: translateY(-1px);
   }
 
-  footer { background: var(--cream-deep); padding: 3rem 2rem 2rem; border-top: 2px solid var(--ink); }
+  /* ===== Official festival handoff (F-mark) ===== */
+  .fringe-handoff {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: inherit;
+  }
+  .fringe-handoff img {
+    width: 76px;
+    height: 76px;
+    display: block;
+    transition: transform 0.25s ease;
+  }
+  .fringe-handoff:hover img { transform: scale(1.06) rotate(-3deg); }
+  .fringe-handoff .fh-caption {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    text-align: center;
+    line-height: 1.15;
+  }
+  .fringe-handoff:hover .fh-caption { color: var(--accent); }
+  .fringe-handoff .fh-caption .ext-icon { color: var(--accent); opacity: 1; }
+
+  footer { background: var(--paper-deep); padding: 3rem 2rem 2rem; border-top: 2px solid var(--ink); }
   .footer-inner {
     max-width: 1100px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr auto;
     gap: 2.5rem;
+    align-items: start;
   }
   .footer-brand .brand-mark { font-size: 1.4rem; }
   .footer-brand p { margin-top: 0.8rem; font-size: 0.9rem; color: var(--ink-soft); }
@@ -432,6 +529,7 @@
     transition: color 0.2s;
   }
   footer a:hover { color: var(--accent); }
+  .footer-official { justify-self: end; padding-top: 0.5rem; }
   .footer-disclaimer {
     max-width: 1100px;
     margin: 2.5rem auto 0;
@@ -444,6 +542,7 @@
   .footer-disclaimer strong { color: var(--accent-dark); }
   @media (max-width: 720px) {
     .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-official { justify-self: start; }
   }
 
   @keyframes rise {
@@ -454,6 +553,11 @@
   .rise-1 { animation-delay: 0.1s; }
   .rise-2 { animation-delay: 0.25s; }
   .rise-3 { animation-delay: 0.4s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+    html { scroll-behavior: auto; }
+  }
 </style>
 </head>
 <body>
@@ -488,11 +592,11 @@
       <div class="hero-meta rise rise-3">
         <div>
           <div class="label">Festival</div>
-          <div class="value">GSL Fringe 2026</div>
+          <div class="value">Great Salt Lake Fringe 2026</div>
         </div>
         <div>
-          <div class="label">Dates</div>
-          <div class="value">July 23 – Aug 2</div>
+          <div class="label">Performances</div>
+          <div class="value">Jul 25 · Jul 26 · Aug 1</div>
         </div>
         <div>
           <div class="label">Rating</div>
@@ -549,21 +653,42 @@
 
 <section class="homecoming">
   <div class="container">
-    <div class="section-eyebrow" style="color: var(--accent);">why this show is special</div>
+    <div class="section-eyebrow">why this show is special</div>
     <h2 class="section-title">This is a homecoming.</h2>
-    <p>I performed my first-ever stand-up set in 2012 at Wiseguys Comedy Club at Trolley Square.</p>
-    <p>Coming back to do an hour of comedy infor the city that raised me, feels enormous. Fringe shows are <em>original, uncensored, and unadjudicated</em> — exactly the right room for this story.</p>
+    <p>I performed my first-ever stand-up set in 2012 at Wiseguys Comedy Club in Trolley Square — the same Trolley Square where I'm doing this run.</p>
+    <p>Coming back to do an hour of comedy in the city that raised me feels enormous. Fringe shows are <em>original, uncensored, and unadjudicated</em> — exactly the right room for this story.</p>
   </div>
 </section>
 
 <section class="venues" id="venue">
   <div class="container">
     <div class="section-eyebrow">where to find me</div>
-    <h2 class="section-title">Three performances at this year's Fringe.</h2>
-    <div class="venue">
-      <h3>Times &amp; venues: TBD</h3>
-      <p class="vnote">Twink or Swim is officially in the lineup for <strong>three performances</strong> at GSL Fringe 2026. The festival is still finalizing the venue list — specific show times and locations will be announced when the 2026 Fringe program drops.</p>
-      <span class="on-sale-badge">Tickets on sale <span class="accent">July 1</span></span>
+    <h2 class="section-title">Three performances at Trolley Square.</h2>
+    <div class="show-grid">
+      <ul class="showtimes">
+        <li>
+          <span class="day">Saturday<small>July 25</small></span>
+          <span class="time">9:00 PM</span>
+        </li>
+        <li>
+          <span class="day">Sunday<small>July 26</small></span>
+          <span class="time">7:30 PM</span>
+        </li>
+        <li>
+          <span class="day">Saturday<small>August 1</small></span>
+          <span class="time">4:30 PM</span>
+        </li>
+      </ul>
+      <div class="venue-card">
+        <h3>Alliance Theatre — Black Box</h3>
+        <address>
+          Trolley Square<br>
+          602 E 500 S, Suite E101<br>
+          Salt Lake City, UT 84102
+        </address>
+        <p class="vnote">All three shows are in the Black Box at the Alliance Theatre, inside Trolley Square. Run time is about 50 minutes.</p>
+        <span class="on-sale-badge">Tickets on sale <span class="accent">July 1</span></span>
+      </div>
     </div>
     <div class="venues-disclaimer">
       <strong>Heads up:</strong> Tickets are sold exclusively through the official Great Salt Lake Fringe box office — I don't handle ticket sales directly.
@@ -573,12 +698,12 @@
 
 <section class="cta" id="tickets">
   <div class="container">
-    <div class="section-eyebrow" style="color: var(--accent);">come see the show</div>
-    <h2 class="section-title">Get involved.</h2>
+    <div class="section-eyebrow">come see the show</div>
+    <h2 class="section-title">Get tickets.</h2>
     <span class="on-sale-callout">Tickets on sale July 1</span>
-    <p>Three performances at GSL Fringe 2026 — times and venues TBD. Tickets through the official Fringe box office. Follow along on socials for behind-the-scenes Navy photos, clips, and the occasional unhinged announcement.</p>
+    <p>Three performances at the Great Salt Lake Fringe 2026 — Alliance Theatre Black Box, Trolley Square. Tickets go through the official Fringe box office. Follow along on socials for behind-the-scenes Navy photos, clips, and the occasional unhinged announcement.</p>
     <div class="cta-buttons">
-      <a href="https://tickets.greatsaltlakefringe.org/" class="primary" target="_blank" rel="noopener">Buy tickets at gslfringe.org <span class="ext-icon" aria-hidden="true">↗</span></a>
+      <a href="https://tickets.greatsaltlakefringe.org/" class="primary" target="_blank" rel="noopener">Buy tickets <span class="ext-icon" aria-hidden="true">↗</span></a>
       <a href="https://www.instagram.com/theinappropriatecontent/" class="secondary" target="_blank" rel="noopener">Instagram</a>
       <a href="https://www.facebook.com/inappropriatecontent/" class="secondary" target="_blank" rel="noopener">Facebook</a>
     </div>
@@ -598,19 +723,26 @@
       <a href="index.html">J'myle's main site</a>
       <a href="#show">About the show</a>
       <a href="#watch">Watch</a>
-      <a href="#venue">Venue & dates</a>
+      <a href="#venue">Where &amp; when</a>
       <a href="#tickets">Tickets</a>
     </div>
     <div>
       <h4>Elsewhere</h4>
-      <a href="https://www.gslfringe.org/" target="_blank" rel="noopener">Official GSL Fringe <span class="ext-icon" aria-hidden="true">↗</span></a>
       <a href="https://www.instagram.com/theinappropriatecontent/" target="_blank" rel="noopener">Instagram</a>
       <a href="https://www.facebook.com/inappropriatecontent/" target="_blank" rel="noopener">Facebook</a>
+      <a href="mailto:inappropriatecontent@gmail.com">Email</a>
+    </div>
+    <div class="footer-official">
+      <a class="fringe-handoff" href="https://www.gslfringe.org/" target="_blank" rel="noopener"
+         title="Visit the official Great Salt Lake Fringe website (opens in a new tab)">
+        <img src="fringe-f.png" alt="Great Salt Lake Fringe — official festival website">
+        <span class="fh-caption">Official Great<br>Salt Lake Fringe <span class="ext-icon" aria-hidden="true">↗</span></span>
+      </a>
     </div>
   </div>
   <div class="footer-disclaimer">
     <strong>This is an artist's page, not an official Great Salt Lake Fringe Festival site.</strong>
-    Twink or Swim is a participating show in GSL Fringe 2026; this site is operated independently by J'myle Koretz. For the official festival lineup, full schedule, and ticketing, visit <a href="https://www.gslfringe.org/" target="_blank" rel="noopener" style="display: inline;">gslfringe.org</a>. The Great Salt Lake Fringe name and branding belong to the festival.
+    Twink or Swim is a participating show in the Great Salt Lake Fringe 2026; this site is operated independently by J'myle Koretz. For the official festival lineup, full schedule, and ticketing, visit <a href="https://www.gslfringe.org/" target="_blank" rel="noopener" style="display: inline;">gslfringe.org</a>. The Great Salt Lake Fringe name and branding belong to the festival.
   </div>
 </footer>
 
