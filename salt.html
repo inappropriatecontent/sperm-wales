@@ -103,11 +103,11 @@
     box-shadow: 6px 6px 0 var(--ink);
   }
 
-  /* ===== Hero (now white-field, blue type) ===== */
+  /* ===== Hero (white-field, blue type) — dates & tickets up front ===== */
   .hero {
     background: var(--paper);
     color: var(--ink);
-    padding: 5rem 2rem;
+    padding: 2.75rem 2rem 3.25rem;
     position: relative;
     overflow: hidden;
     border-bottom: 1px solid var(--rule);
@@ -121,14 +121,10 @@
     pointer-events: none;
   }
   .hero-inner {
-    max-width: 1200px;
+    max-width: 860px;
     margin: 0 auto;
     position: relative;
     z-index: 1;
-    display: grid;
-    grid-template-columns: 1.3fr 1fr;
-    gap: 4rem;
-    align-items: center;
   }
   .hero-eyebrow {
     font-family: 'Caveat', cursive;
@@ -143,7 +139,7 @@
     font-size: clamp(3.2rem, 8vw, 6.5rem);
     line-height: 0.9;
     letter-spacing: 0.01em;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     color: var(--ink);
   }
   .hero-title .accent { color: var(--accent); }
@@ -151,27 +147,115 @@
     font-size: 1.25rem;
     font-style: italic;
     color: var(--ink-soft);
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
   }
-  .hero-meta {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem 2.5rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--rule);
+
+  /* Showtimes list, hero-sized */
+  .showtimes { list-style: none; }
+  .showtimes li {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid var(--rule);
   }
-  .hero-meta .label {
+  .showtimes li:first-child { border-top: 3px solid var(--ink); }
+  .showtimes .day {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.7rem;
+    letter-spacing: 0.03em;
+    line-height: 1;
+  }
+  .showtimes .day small {
+    display: block;
+    font-family: 'Source Sans 3', sans-serif;
     font-size: 0.72rem;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--accent);
-    margin-bottom: 0.2rem;
+    margin-top: 0.25rem;
   }
-  .hero-meta .value {
+  .showtimes .time {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.4rem;
-    letter-spacing: 0.03em;
-    color: var(--ink);
+    font-size: 1.7rem;
+    letter-spacing: 0.04em;
+    color: var(--accent-dark);
+    white-space: nowrap;
+  }
+  /* Hero: three shows side by side, one compact strip */
+  .hero-times {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 3px solid var(--ink);
+    border-bottom: 1px solid var(--rule);
+  }
+  .hero-times .slot {
+    padding: 0.8rem 0.75rem 0.9rem 0;
+    border-right: 1px solid var(--rule);
+  }
+  .hero-times .slot:last-child { border-right: none; }
+  .hero-times .slot + .slot { padding-left: 1rem; }
+  .hero-times .day {
+    display: block;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 0.04em;
+    line-height: 1.1;
+  }
+  .hero-times .day small {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-left: 0.4rem;
+  }
+  .hero-times .time {
+    display: block;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.55rem;
+    letter-spacing: 0.04em;
+    color: var(--accent-dark);
+    white-space: nowrap;
+    margin-top: 0.15rem;
+  }
+  @media (max-width: 560px) {
+    .hero-times .day { font-size: 1.05rem; }
+    .hero-times .day small { display: block; margin-left: 0; margin-top: 0.1rem; }
+    .hero-times .time { font-size: 1.3rem; }
+  }
+
+  .hero-cta-row {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+  }
+  .hero-tickets-btn {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    padding: 0.9rem 2.2rem;
+    border: 2px solid var(--accent);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.35rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    box-shadow: 5px 5px 0 var(--ink);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .hero-tickets-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0 var(--ink);
+  }
+  .hero-venue-line {
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
   }
 
   .hero-photo {
@@ -195,13 +279,8 @@
     color: var(--accent);
     font-size: 1.3rem;
     transform: rotate(-4deg);
-    background: var(--paper);
+    background: var(--paper-deep);
     padding: 0.3rem 0.8rem;
-  }
-
-  @media (max-width: 880px) {
-    .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
-    .hero-photo { max-width: 400px; margin: 0 auto; }
   }
 
   section { padding: 5rem 2rem; }
@@ -220,10 +299,33 @@
     letter-spacing: 0.02em;
   }
 
-  /* ===== Announcement video ===== */
-  .announce { background: var(--paper-deep); }
-  .announce .container { max-width: 900px; text-align: center; }
-  .announce .section-title { margin-bottom: 2.5rem; }
+  /* ===== Preview video (centerpiece) ===== */
+  .preview {
+    background: var(--field);
+    color: #fff;
+    padding: 4.5rem 2rem 5.5rem;
+  }
+  .preview .container { max-width: 980px; text-align: center; }
+  .preview .section-eyebrow { color: #7fd0f5; }
+  .preview .section-title { color: #fff; margin-bottom: 2.5rem; }
+  .preview .video-sub {
+    font-size: 1.05rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 560px;
+    margin: 2.25rem auto 0;
+  }
+  .preview .video-wrap { max-width: 900px; }
+  .preview .video-frame {
+    border-color: #fff;
+    box-shadow: 12px 12px 0 rgba(127, 208, 245, 0.55);
+  }
+  .preview .video-caption {
+    background: var(--field);
+    color: #7fd0f5;
+  }
+
+  /* ===== Video embed shared bits ===== */
   .video-wrap {
     position: relative;
     width: 100%;
@@ -260,13 +362,6 @@
     background: var(--paper-deep);
     padding: 0.3rem 0.9rem;
     z-index: 2;
-  }
-  .announce .video-sub {
-    font-size: 1.05rem;
-    font-style: italic;
-    color: var(--ink-soft);
-    max-width: 560px;
-    margin: 2rem auto 0;
   }
 
   .about { background: var(--paper); }
@@ -308,45 +403,17 @@
 
   .show-grid {
     display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: 3rem;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 3.5rem;
     align-items: start;
+  }
+  .show-grid-details {
+    display: grid;
+    gap: 2.5rem;
   }
   @media (max-width: 820px) {
     .show-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-  }
-
-  .showtimes { list-style: none; }
-  .showtimes li {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 1.5rem;
-    padding: 1.1rem 0;
-    border-bottom: 1px solid var(--rule);
-  }
-  .showtimes li:first-child { border-top: 3px solid var(--ink); }
-  .showtimes .day {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.7rem;
-    letter-spacing: 0.03em;
-    line-height: 1;
-  }
-  .showtimes .day small {
-    display: block;
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 0.72rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-top: 0.25rem;
-  }
-  .showtimes .time {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.7rem;
-    letter-spacing: 0.04em;
-    color: var(--accent-dark);
-    white-space: nowrap;
+    .show-grid .hero-photo { max-width: 400px; margin: 1rem auto 2rem; }
   }
 
   .venue-card {
@@ -515,89 +582,49 @@
 <section class="hero">
   <div class="hero-inner">
     <div>
-      <div class="hero-eyebrow rise rise-1">I'm doing a show at Fringe!</div>
+      <div class="hero-eyebrow rise rise-1">It's showtime!</div>
       <h1 class="hero-title rise rise-2">TWINK<br><span class="accent">OR</span> SWIM</h1>
-      <p class="hero-byline rise rise-3">Don't Ask, Don't Tell, Do Laugh. A one-person comedy about a 1990s Salt Lake gay teen who joins the U.S. Navy.</p>
-      <div class="hero-meta rise rise-3">
-        <div>
-          <div class="label">Festival</div>
-          <div class="value">Great Salt Lake Fringe 2026</div>
-        </div>
-        <div>
-          <div class="label">Performances</div>
-          <div class="value">Jul 25 · Jul 26 · Aug 1</div>
-        </div>
-        <div>
-          <div class="label">Rating</div>
-          <div class="value">FF — Fringe-y</div>
-        </div>
-        <div>
-          <div class="label">Run Time</div>
-          <div class="value">50 minutes</div>
-        </div>
-      </div>
-    </div>
-    <div class="hero-photo rise rise-3">
-      <img src="dress.jpg" alt="J'myle Koretz on stage at Wiseguys Comedy Club in full Navy crackerjacks">
-      <span class="caption">that's me!</span>
-    </div>
-  </div>
-</section>
-
-<section class="venues" id="venue">
-  <div class="container">
-    <div class="section-eyebrow">where to find me</div>
-    <h2 class="section-title">Three performances at Trolley Square.</h2>
-    <div class="show-grid">
-      <ul class="showtimes">
-        <li>
-          <span class="day">Saturday<small>July 25</small></span>
+      <p class="hero-byline rise rise-3">Don't Ask, Don't Tell, Do Laugh. A one-person comedy at the Great Salt Lake Fringe 2026.</p>
+      <div class="hero-times rise rise-3">
+        <div class="slot">
+          <span class="day">Saturday <small>Jul 25</small></span>
           <span class="time">9:00 PM</span>
-        </li>
-        <li>
-          <span class="day">Sunday<small>July 26</small></span>
+        </div>
+        <div class="slot">
+          <span class="day">Sunday <small>Jul 26</small></span>
           <span class="time">7:30 PM</span>
-        </li>
-        <li>
-          <span class="day">Saturday<small>August 1</small></span>
+        </div>
+        <div class="slot">
+          <span class="day">Saturday <small>Aug 1</small></span>
           <span class="time">4:30 PM</span>
-        </li>
-      </ul>
-      <div class="venue-card">
-        <h3>Alliance Theatre — Black Box</h3>
-        <address>
-          Trolley Square<br>
-          602 E 500 S, Suite E101<br>
-          Salt Lake City, UT 84102
-        </address>
-        <p class="vnote">All three shows are in the Black Box at the Alliance Theatre, inside Trolley Square. Run time is about 50 minutes.</p>
-        <a href="https://tickets.greatsaltlakefringe.org/" class="on-sale-badge" target="_blank" rel="noopener">Tickets on sale <span class="accent">now</span> <span class="ext-icon" aria-hidden="true">↗</span></a>
+        </div>
       </div>
-    </div>
-    <div class="venues-disclaimer">
-      <strong>Heads up:</strong> Tickets are sold exclusively through the official Great Salt Lake Fringe box office — I don't handle ticket sales directly.
+      <div class="hero-cta-row rise rise-3">
+        <a href="https://tickets.greatsaltlakefringe.org/" class="hero-tickets-btn" target="_blank" rel="noopener">Get Tickets <span class="ext-icon" aria-hidden="true">↗</span></a>
+        <span class="hero-venue-line">Alliance Theatre Black Box · Trolley Square · 50 min</span>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="announce" id="watch">
+<section class="preview" id="watch">
   <div class="container">
-    <div class="section-eyebrow">hot off the press</div>
-    <h2 class="section-title">Watch the announcement.</h2>
+    <div class="section-eyebrow">fresh from the preview show</div>
+    <h2 class="section-title">Three minutes of Twink or Swim.</h2>
     <div class="video-wrap">
       <div class="video-frame">
         <iframe
-          src="https://www.youtube-nocookie.com/embed/XWOlv1vxRjc?rel=0&modestbranding=1"
-          title="J'myle Koretz — Twink or Swim announcement"
-          loading="lazy"
-          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          id="preview-player"
+          src="https://www.youtube-nocookie.com/embed/thEQrqx6vY4?rel=0&modestbranding=1&enablejsapi=1&mute=1&playsinline=1"
+          title="J'myle Koretz — Twink or Swim preview performance"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
           referrerpolicy="strict-origin-when-cross-origin">
         </iframe>
       </div>
-      <span class="video-caption">press play!</span>
+      <span class="video-caption">sound on!</span>
     </div>
-    <p class="video-sub">Here's the official word that <em>Twink or Swim</em> is headed to the Great Salt Lake Fringe this July. Three performances, one wooden warship's worth of stories.</p>
+    <p class="video-sub">A clip from the preview performance — this is what you're in for. It starts muted; tap the speaker for sound.</p>
   </div>
 </section>
 
@@ -622,6 +649,48 @@
     <h2 class="section-title">This is a homecoming.</h2>
     <p>I performed my first-ever stand-up set in 2012 at Wiseguys Comedy Club in Trolley Square — the same Trolley Square where I'm doing this run.</p>
     <p>Coming back to do an hour of comedy in the city that raised me feels enormous. Fringe shows are <em>original, uncensored, and unadjudicated</em> — exactly the right room for this story.</p>
+  </div>
+</section>
+
+<section class="venues" id="venue">
+  <div class="container">
+    <div class="section-eyebrow">where to find me</div>
+    <h2 class="section-title">Three performances at Trolley Square.</h2>
+    <div class="show-grid">
+      <div class="show-grid-details">
+        <ul class="showtimes">
+          <li>
+            <span class="day">Saturday<small>July 25</small></span>
+            <span class="time">9:00 PM</span>
+          </li>
+          <li>
+            <span class="day">Sunday<small>July 26</small></span>
+            <span class="time">7:30 PM</span>
+          </li>
+          <li>
+            <span class="day">Saturday<small>August 1</small></span>
+            <span class="time">4:30 PM</span>
+          </li>
+        </ul>
+        <div class="venue-card">
+          <h3>Alliance Theatre — Black Box</h3>
+          <address>
+            Trolley Square<br>
+            602 E 500 S, Suite E101<br>
+            Salt Lake City, UT 84102
+          </address>
+          <p class="vnote">All three shows are in the Black Box at the Alliance Theatre, inside Trolley Square. Run time is about 50 minutes.</p>
+          <a href="https://tickets.greatsaltlakefringe.org/" class="on-sale-badge" target="_blank" rel="noopener">Tickets on sale <span class="accent">now</span> <span class="ext-icon" aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="dress.jpg" alt="J'myle Koretz on stage at Wiseguys Comedy Club in full Navy crackerjacks">
+        <span class="caption">that's me!</span>
+      </div>
+    </div>
+    <div class="venues-disclaimer">
+      <strong>Heads up:</strong> Tickets are sold exclusively through the official Great Salt Lake Fringe box office — I don't handle ticket sales directly.
+    </div>
   </div>
 </section>
 
@@ -659,6 +728,37 @@
     Twink or Swim is a participating show in the Great Salt Lake Fringe 2026; this site is operated independently by J'myle Koretz. For the official festival lineup, full schedule, and ticketing, visit <a href="https://www.gslfringe.org/" target="_blank" rel="noopener" style="display: inline;">gslfringe.org</a>. The Great Salt Lake Fringe name and branding belong to the festival.
   </div>
 </footer>
+
+<script>
+(function () {
+  var frame = document.getElementById('preview-player');
+  if (!frame) return;
+  // Respect reduced-motion: no auto-start for those users.
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  function send(cmd) {
+    try {
+      frame.contentWindow.postMessage(
+        JSON.stringify({ event: 'command', func: cmd, args: [] }), '*'
+      );
+    } catch (e) { /* no-op */ }
+  }
+
+  var hasPlayed = false;
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+        send('playVideo');
+        hasPlayed = true;
+      } else if (hasPlayed) {
+        send('pauseVideo');
+      }
+    });
+  }, { threshold: [0, 0.5] });
+
+  observer.observe(frame);
+})();
+</script>
 
 </body>
 </html>
