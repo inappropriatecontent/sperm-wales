@@ -239,7 +239,7 @@
     font-style: italic;
   }
 
-  /* ===== Featured / Fringe ===== */
+  /* ===== Featured / the show ===== */
   .featured {
     background: var(--ink);
     color: var(--paper);
@@ -251,7 +251,7 @@
     overflow: hidden;
   }
   .featured::before {
-    content: "JUL 2026 · JUL 2026 · JUL 2026 · JUL 2026 · JUL 2026 · JUL 2026 · JUL 2026 · ";
+    content: "ON TOUR · TWINK OR SWIM · ON TOUR · TWINK OR SWIM · ON TOUR · TWINK OR SWIM · ON TOUR · TWINK OR SWIM · ";
     position: absolute;
     top: 1.5rem;
     left: 0;
@@ -349,6 +349,18 @@
     color: var(--paper);
     border-bottom-color: var(--paper);
   }
+  .featured-award {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--paper);
+    border: 1px solid var(--accent);
+    padding: 0.45rem 0.9rem;
+  }
+  .featured-award .star { color: var(--accent); }
 
   /* ===== Tape (bookers) ===== */
   .tape-section {
@@ -488,6 +500,19 @@
     font-size: 0.95rem;
     display: block;
     margin-top: 0.25rem;
+  }
+  .credit-list .item .award {
+    display: inline-block;
+    margin-left: 0.6rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--paper);
+    background: var(--accent);
+    padding: 0.2rem 0.5rem;
+    vertical-align: 0.15em;
+    white-space: nowrap;
   }
   .credit-list .item a {
     color: inherit;
@@ -686,6 +711,7 @@
       font-size: 0.7rem;
       letter-spacing: 0.2em;
     }
+    .credit-list .item .award { margin-left: 0; margin-top: 0.4rem; display: block; width: fit-content; }
     .hero-meta { gap: 1.25rem; }
   }
 </style>
@@ -693,7 +719,7 @@
 <body>
 
 <div class="top-strip">
-  <span><span class="dot"></span>Currently booking · 2026</span>
+  <span><span class="dot"></span>Currently booking · 2026–27</span>
   <span class="right">Seattle, WA · Pacific Standard Time</span>
 </div>
 
@@ -704,8 +730,8 @@
     <p class="hero-tag">Clever, observant, autobiographical stand-up. Material drawn from a life that probably shouldn't have happened the way it did, told to rooms that probably shouldn't laugh as hard as they do.</p>
     <div class="hero-meta">
       <span><strong>Based</strong> &nbsp; Seattle, WA</span>
-      <span><strong>Booking</strong> &nbsp; Available 2026</span>
-      <span><strong>Next</strong> &nbsp; <a href="salt.html">Great Salt Lake Fringe · Jul 2026</a></span>
+      <span><strong>Booking</strong> &nbsp; 2026–27</span>
+      <span><strong>Touring</strong> &nbsp; <a href="salt.html">"Twink or Swim" · Solo Hour</a></span>
     </div>
   </div>
   <div class="hero-portrait">
@@ -717,26 +743,27 @@
   <h2>The <em>working</em> bio.</h2>
   <div class="about-body">
     <p>J'myle writes the kind of material that earns the laugh on the second beat, then steals an extra one on the third. Autobiographical without being indulgent. Clever without being cold.</p>
-    <p>The short version: Salt Lake kid, four years in the Navy on a wooden minesweeper in the Western Pacific, now based in Seattle. The long version is an hour of stand-up.</p>
+    <p>The short version: Salt Lake kid, four years in the Navy on a wooden minesweeper in the Western Pacific, now based in Seattle. The long version is an hour of stand-up called <em>Twink or Swim</em>.</p>
     <p>He hosts and features around the Pacific Northwest, has performed twice at The Hollywood Comedy Store, and has studied under Alice Fraser, Tiff Stevenson, and Andrew Frank. Selected credits are below.</p>
   </div>
 </section>
 
 <section class="featured">
   <div class="featured-inner">
-    <div class="section-label">Now Playing</div>
+    <div class="section-label">The Show</div>
     <div class="featured-grid">
       <div>
+        <div class="featured-award"><span class="star">★</span> Spirit of Fringe Award · GSL Fringe 2026</div>
         <h2><a href="salt.html"><span class="quote">"</span>Twink or<br>Swim<span class="quote">"</span></a></h2>
-        <p class="featured-blurb">An hour of stand-up, accepted into the 2026 Great Salt Lake Fringe Festival. It is exactly what it sounds like, and also not at all.</p>
-        <a href="salt.html" class="featured-link">Read more about the show →</a>
+        <p class="featured-blurb">A solo hour, premiered at the 2026 Great Salt Lake Fringe. One performer, one microphone, no set to freight. Adult themes, clean language. Available to festivals and venues.</p>
+        <a href="salt.html" class="featured-link">For presenters &amp; programmers →</a>
       </div>
       <div class="featured-details">
         <dl>
-          <dt>Festival</dt><dd>Great Salt Lake Fringe</dd>
-          <dt>Run</dt><dd>July 2026 · Salt Lake City, UT</dd>
-          <dt>Format</dt><dd>Solo Stand-Up Hour</dd>
-          <dt>Status</dt><dd>Officially Selected</dd>
+          <dt>Premiere</dt><dd>Great Salt Lake Fringe, July 2026</dd>
+          <dt>Award</dt><dd>Spirit of Fringe</dd>
+          <dt>Format</dt><dd>Solo stand-up · 45–50 min · PG-13</dd>
+          <dt>Status</dt><dd>Touring 2026–27</dd>
         </dl>
       </div>
     </div>
@@ -774,7 +801,7 @@
     <ul class="credit-list">
       <li>
         <span class="year">2026</span>
-        <span class="item"><a href="salt.html">Great Salt Lake Fringe Festival</a><span class="venue">Solo hour: "Twink or Swim"</span></span>
+        <span class="item"><a href="salt.html">Great Salt Lake Fringe Festival</a><span class="award">★ Spirit of Fringe Award</span><span class="venue">Solo hour: "Twink or Swim"</span></span>
       </li>
       <li>
         <span class="year">×2</span>
@@ -817,7 +844,7 @@
   <div class="footer-grid">
     <div class="footer-name">J'myle <em>Koretz</em></div>
     <div class="footer-links">
-      <a href="salt.html">Twink or Swim → GSL Fringe 2026</a>
+      <a href="salt.html">Twink or Swim → the touring hour</a>
       <a href="videos.html">Tape → for bookers</a>
       <a href="https://instagram.com/theinappropriatecontent" target="_blank" rel="noopener">Instagram → @theinappropriatecontent</a>
       <a href="https://facebook.com/inappropriatecontent" target="_blank" rel="noopener">Facebook → inappropriatecontent</a>
