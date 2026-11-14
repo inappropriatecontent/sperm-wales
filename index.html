@@ -4,857 +4,152 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>J'myle Koretz — Stand-Up Comedy</title>
-<meta name="description" content="J'myle Koretz is a Seattle-based stand-up comic. Clever, observant, autobiographical. Available for clubs, festivals, and bookings.">
+<meta name="description" content="J'myle Koretz is a Salt Lake City stand-up comic. Clever, observant, autobiographical. Now touring the solo hour Twink or Swim. Available for clubs, festivals, and private events.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sperm.wales/">
+<meta property="og:title" content="J'myle Koretz — Stand-Up Comedy">
+<meta property="og:description" content="Clever, observant, autobiographical stand-up. Now touring Twink or Swim, winner of the Spirit of Fringe Award at Great Salt Lake Fringe 2026.">
+<meta property="og:image" content="https://sperm.wales/head.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400;1,9..144,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --paper: #f4efe6;
-    --paper-deep: #ebe4d6;
-    --ink: #1a1814;
-    --ink-soft: #4a463e;
-    --accent: #c8442a;
-    --accent-deep: #9c2f1a;
-    --rule: #1a1814;
-  }
-
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--paper);
-    color: var(--ink);
-    font-family: 'Fraunces', Georgia, serif;
-    font-weight: 400;
-    line-height: 1.5;
-    overflow-x: hidden;
-    background-image:
-      radial-gradient(circle at 20% 10%, rgba(0,0,0,0.025) 1px, transparent 1px),
-      radial-gradient(circle at 80% 60%, rgba(0,0,0,0.02) 1px, transparent 1px);
-    background-size: 3px 3px, 5px 5px;
-  }
-
-  /* ===== Top strip ===== */
-  .top-strip {
-    border-bottom: 1px solid var(--rule);
-    padding: 0.75rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-  }
-  .top-strip .dot {
-    display: inline-block;
-    width: 8px; height: 8px;
-    background: var(--accent);
-    border-radius: 50%;
-    margin-right: 0.5rem;
-    animation: pulse 2s ease-in-out infinite;
-    vertical-align: middle;
-  }
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
-  }
-
-  /* ===== Hero ===== */
-  .hero {
-    padding: 4rem 2rem 5rem;
-    max-width: 1400px;
-    margin: 0 auto;
-    position: relative;
-    display: grid;
-    grid-template-columns: 1.3fr 1fr;
-    gap: 4rem;
-    align-items: center;
-  }
-  .hero-content { min-width: 0; }
-  .hero-portrait {
-    position: relative;
-    aspect-ratio: 4 / 5;
-    background: var(--paper-deep);
-    border: 1px solid var(--rule);
-    overflow: hidden;
-    opacity: 0;
-    animation: fadeUp 1s ease 0.5s forwards;
-  }
-  .hero-portrait img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    filter: contrast(1.05);
-  }
-  .hero-portrait::after {
-    content: "J. KORETZ · STAND-UP · MMXXVI";
-    position: absolute;
-    bottom: 0.75rem;
-    left: 0.75rem;
-    right: 0.75rem;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.6rem;
-    letter-spacing: 0.25em;
-    color: var(--paper);
-    background: rgba(26, 24, 20, 0.75);
-    padding: 0.4rem 0.6rem;
-    text-align: center;
-    backdrop-filter: blur(4px);
-  }
-
-  .hero-eyebrow {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 1.5rem;
-    opacity: 0;
-    animation: fadeUp 0.8s ease 0.1s forwards;
-  }
-
-  .hero h1 {
-    font-family: 'Fraunces', serif;
-    font-weight: 300;
-    font-size: clamp(3.5rem, 12vw, 11rem);
-    line-height: 0.88;
-    letter-spacing: -0.04em;
-    margin-bottom: 0;
-    font-variation-settings: "opsz" 144;
-    opacity: 0;
-    animation: fadeUp 0.9s ease 0.2s forwards;
-  }
-  .hero h1 .italic {
-    font-style: italic;
-    font-weight: 400;
-    color: var(--accent);
-  }
-
-  .hero-tag {
-    margin-top: 2.5rem;
-    max-width: 38rem;
-    font-size: clamp(1.1rem, 1.6vw, 1.35rem);
-    line-height: 1.55;
-    color: var(--ink-soft);
-    font-style: italic;
-    opacity: 0;
-    animation: fadeUp 0.9s ease 0.4s forwards;
-  }
-
-  .hero-meta {
-    margin-top: 3rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2.5rem;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-    opacity: 0;
-    animation: fadeUp 0.9s ease 0.6s forwards;
-  }
-  .hero-meta span strong {
-    color: var(--ink);
-    font-weight: 500;
-  }
-  .hero-meta a {
-    color: inherit;
-    text-decoration: none;
-    border-bottom: 1px solid var(--accent);
-    padding-bottom: 1px;
-    transition: color 0.2s;
-  }
-  .hero-meta a:hover { color: var(--accent); }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* ===== Section base ===== */
-  section {
-    padding: 5rem 2rem;
-    max-width: 1400px;
-    margin: 0 auto;
-    border-top: 1px solid var(--rule);
-  }
-
-  .section-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 2.5rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-  .section-label::before {
-    content: "";
-    display: block;
-    width: 2.5rem;
-    height: 1px;
-    background: var(--accent);
-  }
-
-  /* ===== About ===== */
-  .about {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 4rem;
-    align-items: start;
-  }
-  .about h2 {
-    font-family: 'Fraunces', serif;
-    font-weight: 300;
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    line-height: 1;
-    letter-spacing: -0.02em;
-  }
-  .about h2 em {
-    font-style: italic;
-    color: var(--accent);
-  }
-  .about-body p {
-    font-size: 1.15rem;
-    line-height: 1.7;
-    margin-bottom: 1.25rem;
-    color: var(--ink);
-  }
-  .about-body p:first-child::first-letter {
-    font-size: 4rem;
-    float: left;
-    line-height: 0.85;
-    padding-right: 0.5rem;
-    padding-top: 0.4rem;
-    font-weight: 600;
-    color: var(--accent);
-    font-style: italic;
-  }
-
-  /* ===== Featured / the show ===== */
-  .featured {
-    background: var(--ink);
-    color: var(--paper);
-    margin: 0;
-    max-width: none;
-    padding: 5rem 2rem;
-    border-top: 1px solid var(--rule);
-    position: relative;
-    overflow: hidden;
-  }
-  .featured::before {
-    content: "ON TOUR · TWINK OR SWIM · ON TOUR · TWINK OR SWIM · ON TOUR · TWINK OR SWIM · ON TOUR · TWINK OR SWIM · ";
-    position: absolute;
-    top: 1.5rem;
-    left: 0;
-    white-space: nowrap;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
-    letter-spacing: 0.3em;
-    color: rgba(244, 239, 230, 0.15);
-    animation: marquee 40s linear infinite;
-  }
-  @keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
-  .featured-inner {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding-top: 3rem;
-  }
-  .featured .section-label {
-    color: var(--accent);
-  }
-  .featured .section-label::before {
-    background: var(--accent);
-  }
-  .featured-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: end;
-  }
-  .featured h2 {
-    font-family: 'Fraunces', serif;
-    font-weight: 300;
-    font-size: clamp(3rem, 8vw, 7rem);
-    line-height: 0.9;
-    letter-spacing: -0.03em;
-    font-style: italic;
-  }
-  .featured h2 a {
-    color: inherit;
-    text-decoration: none;
-    transition: color 0.25s ease;
-  }
-  .featured h2 a:hover { color: var(--accent); }
-  .featured h2 .quote {
-    color: var(--accent);
-    font-style: normal;
-    font-weight: 400;
-  }
-  .featured-details {
-    border-left: 1px solid rgba(244, 239, 230, 0.25);
-    padding-left: 2rem;
-  }
-  .featured-details dl {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 0.75rem 2rem;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.85rem;
-    letter-spacing: 0.05em;
-  }
-  .featured-details dt {
-    text-transform: uppercase;
-    font-size: 0.7rem;
-    letter-spacing: 0.2em;
-    color: rgba(244, 239, 230, 0.5);
-    padding-top: 0.2rem;
-  }
-  .featured-details dd {
-    color: var(--paper);
-  }
-  .featured-blurb {
-    margin-top: 2rem;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: rgba(244, 239, 230, 0.85);
-    font-style: italic;
-    max-width: 36rem;
-  }
-  .featured-link {
-    display: inline-block;
-    margin-top: 2rem;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.8rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--accent);
-    text-decoration: none;
-    border-bottom: 1px solid var(--accent);
-    padding-bottom: 3px;
-    transition: all 0.2s ease;
-  }
-  .featured-link:hover {
-    color: var(--paper);
-    border-bottom-color: var(--paper);
-  }
-  .featured-award {
-    display: inline-block;
-    margin-bottom: 1.5rem;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--paper);
-    border: 1px solid var(--accent);
-    padding: 0.45rem 0.9rem;
-  }
-  .featured-award .star { color: var(--accent); }
-
-  /* ===== Tape (bookers) ===== */
-  .tape-section {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 4rem;
-    align-items: start;
-  }
-  .tape-section h2 {
-    font-family: 'Fraunces', serif;
-    font-weight: 300;
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    line-height: 1;
-    letter-spacing: -0.02em;
-  }
-  .tape-section h2 em {
-    font-style: italic;
-    color: var(--accent);
-  }
-  .tape-body {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
-    align-items: start;
-  }
-  .tape-card {
-    border-top: 1px solid var(--rule);
-    padding-top: 1.25rem;
-  }
-  .tape-card .kind {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 0.5rem;
-  }
-  .tape-card .name {
-    font-family: 'Fraunces', serif;
-    font-weight: 400;
-    font-style: italic;
-    font-size: 1.5rem;
-    line-height: 1.1;
-    margin-bottom: 0.75rem;
-  }
-  .tape-card p {
-    font-size: 0.95rem;
-    line-height: 1.55;
-    color: var(--ink-soft);
-  }
-  .tape-cta-row {
-    grid-column: 1 / -1;
-    margin-top: 1rem;
-    padding-top: 1.5rem;
-    border-top: 1px dashed rgba(26, 24, 20, 0.2);
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem 2rem;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .tape-link {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.85rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--ink);
-    text-decoration: none;
-    border-bottom: 1px solid var(--accent);
-    padding-bottom: 3px;
-    transition: all 0.2s ease;
-  }
-  .tape-link:hover {
-    color: var(--accent);
-  }
-  .tape-cta-row .for-bookers {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-  }
-
-  /* ===== Credits ===== */
-  .credits {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 4rem;
-  }
-  .credits h2 {
-    font-family: 'Fraunces', serif;
-    font-weight: 300;
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    line-height: 1;
-    letter-spacing: -0.02em;
-  }
-  .credits h2 em {
-    font-style: italic;
-    color: var(--accent);
-  }
-  .credit-list {
-    list-style: none;
-  }
-  .credit-list li {
-    display: grid;
-    grid-template-columns: 5rem 1fr;
-    gap: 2rem;
-    padding: 1.25rem 0;
-    border-bottom: 1px solid rgba(26, 24, 20, 0.12);
-    align-items: baseline;
-    transition: padding 0.3s ease;
-  }
-  .credit-list li:hover {
-    padding-left: 0.5rem;
-  }
-  .credit-list .year {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.8rem;
-    letter-spacing: 0.1em;
-    color: var(--accent);
-    font-weight: 500;
-  }
-  .credit-list .year.ongoing {
-    font-size: 0.65rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-  }
-  .credit-list .item {
-    font-size: 1.1rem;
-    line-height: 1.4;
-    display: block;
-  }
-  .credit-list .item .venue {
-    color: var(--ink-soft);
-    font-style: italic;
-    font-size: 0.95rem;
-    display: block;
-    margin-top: 0.25rem;
-  }
-  .credit-list .item .award {
-    display: inline-block;
-    margin-left: 0.6rem;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.6rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--paper);
-    background: var(--accent);
-    padding: 0.2rem 0.5rem;
-    vertical-align: 0.15em;
-    white-space: nowrap;
-  }
-  .credit-list .item a {
-    color: inherit;
-    text-decoration: none;
-    border-bottom: 1px solid var(--accent);
-    padding-bottom: 1px;
-    transition: color 0.2s;
-  }
-  .credit-list .item a:hover { color: var(--accent); }
-
-  /* ===== Studied under ===== */
-  .study {
-    margin-top: 3rem;
-    padding-top: 3rem;
-    border-top: 1px dashed rgba(26, 24, 20, 0.2);
-  }
-  .study-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-    margin-bottom: 1rem;
-  }
-  .study-list {
-    font-family: 'Fraunces', serif;
-    font-size: 1.3rem;
-    font-style: italic;
-    color: var(--ink);
-    line-height: 1.5;
-  }
-  .study-list .name {
-    font-weight: 600;
-    font-style: normal;
-  }
-
-  /* ===== Booking CTA ===== */
-  .booking {
-    background: var(--accent);
-    color: var(--paper);
-    max-width: none;
-    margin: 0;
-    padding: 6rem 2rem;
-    border-top: 1px solid var(--rule);
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .booking-inner {
-    max-width: 900px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-  }
-  .booking h2 {
-    font-family: 'Fraunces', serif;
-    font-weight: 300;
-    font-style: italic;
-    font-size: clamp(2.5rem, 6vw, 5rem);
-    line-height: 1;
-    letter-spacing: -0.02em;
-    margin-bottom: 1.5rem;
-  }
-  .booking p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    max-width: 38rem;
-    margin: 0 auto 2.5rem;
-    color: rgba(244, 239, 230, 0.95);
-  }
-  .booking-cta {
-    display: inline-block;
-    background: var(--paper);
-    color: var(--ink);
-    text-decoration: none;
-    padding: 1.25rem 2.5rem;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.85rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    font-weight: 500;
-    border: 2px solid var(--paper);
-    transition: all 0.25s ease;
-  }
-  .booking-cta:hover {
-    background: transparent;
-    color: var(--paper);
-    transform: translateY(-2px);
-  }
-  .booking-types {
-    margin-top: 2.5rem;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: rgba(244, 239, 230, 0.7);
-  }
-
-  /* ===== Footer ===== */
-  footer {
-    padding: 4rem 2rem 2rem;
-    max-width: 1400px;
-    margin: 0 auto;
-    border-top: 1px solid var(--rule);
-  }
-  .footer-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: end;
-  }
-  .footer-name {
-    font-family: 'Fraunces', serif;
-    font-weight: 300;
-    font-size: clamp(2rem, 5vw, 4rem);
-    line-height: 0.9;
-    letter-spacing: -0.02em;
-  }
-  .footer-name em { font-style: italic; color: var(--accent); }
-  .footer-links {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    align-items: flex-end;
-  }
-  .footer-links a {
-    color: var(--ink);
-    text-decoration: none;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.8rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    border-bottom: 1px solid transparent;
-    padding-bottom: 2px;
-    transition: all 0.25s ease;
-  }
-  .footer-links a:hover {
-    color: var(--accent);
-    border-bottom-color: var(--accent);
-  }
-  .footer-meta {
-    margin-top: 4rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(26, 24, 20, 0.15);
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1rem;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-  }
-  .footer-meta .url-joke {
-    color: var(--ink-soft);
-    font-style: italic;
-    text-transform: none;
-    letter-spacing: 0.05em;
-    font-family: 'Fraunces', serif;
-    font-size: 0.85rem;
-  }
-
-  /* ===== Mobile ===== */
-  @media (max-width: 800px) {
-    .top-strip { padding: 0.6rem 1.25rem; font-size: 0.62rem; }
-    .top-strip .right { display: none; }
-    .hero {
-      padding: 2rem 1.25rem 3rem;
-      grid-template-columns: 1fr;
-      gap: 2.5rem;
-    }
-    .hero-portrait { max-width: 20rem; margin: 0 auto; }
-    section { padding: 3rem 1.25rem; }
-    .booking { padding: 4rem 1.25rem; }
-    .featured { padding: 4rem 1.25rem; }
-    footer { padding: 3rem 1.25rem 1.5rem; }
-    .about, .credits, .featured-grid, .footer-grid, .tape-section {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-    .tape-body { grid-template-columns: 1fr; gap: 1.5rem; }
-    .tape-cta-row { justify-content: flex-start; }
-    .featured-details { border-left: none; padding-left: 0; border-top: 1px solid rgba(244,239,230,0.25); padding-top: 1.5rem; }
-    .footer-links { align-items: flex-start; }
-    .credit-list li {
-      grid-template-columns: 1fr;
-      gap: 0.4rem;
-      padding: 1rem 0;
-    }
-    .credit-list .year {
-      font-size: 0.7rem;
-      letter-spacing: 0.2em;
-    }
-    .credit-list .item .award { margin-left: 0; margin-top: 0.4rem; display: block; width: fit-content; }
-    .hero-meta { gap: 1.25rem; }
-  }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
 </head>
 <body>
 
-<div class="top-strip">
-  <span><span class="dot"></span>Currently booking · 2026–27</span>
-  <span class="right">Seattle, WA · Pacific Standard Time</span>
-</div>
-
-<header class="hero">
-  <div class="hero-content">
-    <div class="hero-eyebrow">Stand-Up Comedian</div>
-    <h1>J'myle <span class="italic">Koretz</span></h1>
-    <p class="hero-tag">Clever, observant, autobiographical stand-up. Material drawn from a life that probably shouldn't have happened the way it did, told to rooms that probably shouldn't laugh as hard as they do.</p>
-    <div class="hero-meta">
-      <span><strong>Based</strong> &nbsp; Seattle, WA</span>
-      <span><strong>Booking</strong> &nbsp; 2026–27</span>
-      <span><strong>Touring</strong> &nbsp; <a href="salt.html">"Twink or Swim" · Solo Hour</a></span>
-    </div>
-  </div>
-  <div class="hero-portrait">
-    <img src="head.jpg" alt="J'myle Koretz" />
+<header class="site-head">
+  <div class="wrap">
+    <a href="index.html" class="brand"><span class="brand-flag" aria-hidden="true"></span>J'myle Koretz</a>
+    <nav class="nav" aria-label="Main">
+      <a href="salt.html">Twink or Swim</a>
+      <a href="videos.html">Tape</a>
+      <a href="#credits">Credits</a>
+      <a href="mailto:inappropriatecontent@gmail.com?subject=Booking%20inquiry" class="btn btn-solid">Book the show</a>
+    </nav>
   </div>
 </header>
 
-<section class="about" id="about">
-  <h2>The <em>working</em> bio.</h2>
-  <div class="about-body">
-    <p>J'myle writes the kind of material that earns the laugh on the second beat, then steals an extra one on the third. Autobiographical without being indulgent. Clever without being cold.</p>
-    <p>The short version: Salt Lake kid, four years in the Navy on a wooden minesweeper in the Western Pacific, now based in Seattle. The long version is an hour of stand-up called <em>Twink or Swim</em>.</p>
-    <p>He hosts and features around the Pacific Northwest, has performed twice at The Hollywood Comedy Store, and has studied under Alice Fraser, Tiff Stevenson, and Andrew Frank. Selected credits are below.</p>
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-main">
+      <p class="eyebrow">Stand-up comedian · Salt Lake City</p>
+      <h1 class="display">J'myle<br>Koretz</h1>
+      <p class="lede">Salt Lake kid. Four years in the Navy on a wooden minesweeper. Clever, observant, autobiographical stand-up about all of it.</p>
+      <div class="btn-row">
+        <a href="mailto:inappropriatecontent@gmail.com?subject=Booking%20inquiry" class="btn btn-solid">Book the show</a>
+        <a href="videos.html" class="btn btn-line">Watch the tape</a>
+      </div>
+    </div>
+    <div class="portrait">
+      <img src="head.jpg" alt="J'myle Koretz" width="866" height="1417">
+    </div>
   </div>
 </section>
 
-<section class="featured">
-  <div class="featured-inner">
-    <div class="section-label">The Show</div>
-    <div class="featured-grid">
-      <div>
-        <div class="featured-award"><span class="star">★</span> Spirit of Fringe Award · GSL Fringe 2026</div>
-        <h2><a href="salt.html"><span class="quote">"</span>Twink or<br>Swim<span class="quote">"</span></a></h2>
-        <p class="featured-blurb">A solo hour, premiered at the 2026 Great Salt Lake Fringe. One performer, one microphone, no set to freight. Adult themes, clean language. Available to festivals and venues.</p>
-        <a href="salt.html" class="featured-link">For presenters &amp; programmers →</a>
+<div class="wrap">
+  <div class="flags" aria-hidden="true">
+    <span class="f1"></span><span class="f2"></span><span class="f3"></span><span class="f4"></span>
+    <span class="f5"></span><span class="f6"></span><span class="f7"></span><span class="f8"></span>
+  </div>
+</div>
+
+<section class="section">
+  <div class="wrap">
+    <div class="cards">
+      <div class="card">
+        <p class="num">01</p>
+        <h2 class="h3">Twink or Swim</h2>
+        <p>A solo hour from the minesweeper years. Spirit of Fringe Award, Great Salt Lake Fringe 2026. 45–50 minutes, one performer, a mic and a wash.</p>
+        <a href="salt.html" class="text-link">For presenters →</a>
       </div>
-      <div class="featured-details">
-        <dl>
-          <dt>Premiere</dt><dd>Great Salt Lake Fringe, July 2026</dd>
-          <dt>Award</dt><dd>Spirit of Fringe</dd>
-          <dt>Format</dt><dd>Solo stand-up · 45–50 min · PG-13</dd>
-          <dt>Status</dt><dd>Touring 2026–27</dd>
-        </dl>
+      <div class="card red">
+        <p class="num">02</p>
+        <h2 class="h3">Tape</h2>
+        <p>Two sets for bookers: a club set for adult rooms and a clean set for corporate, college, and private events.</p>
+        <a href="videos.html" class="text-link">Watch →</a>
+      </div>
+      <div class="card yellow">
+        <p class="num">03</p>
+        <h2 class="h3">Touring 2026–27</h2>
+        <p>Routing clubs and festivals across the West from Salt Lake City. Happy to work around a date you've already got on the calendar.</p>
+        <a href="mailto:inappropriatecontent@gmail.com?subject=Booking%20inquiry" class="text-link">Ask about dates →</a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="tape-section" id="tape">
-  <div>
-    <div class="section-label">Tape</div>
-    <h2>For <em>bookers</em>.</h2>
-  </div>
-  <div>
-    <div class="tape-body">
-      <div class="tape-card">
-        <div class="kind">Tape 01 · Blue</div>
-        <div class="name">Club set</div>
-        <p>As performed. Headline or feature material for adult rooms — clubs, late festival slots.</p>
-      </div>
-      <div class="tape-card">
-        <div class="kind">Tape 02 · Clean</div>
-        <div class="name">Clean set</div>
-        <p>Corporate-safe, no profanity. Same voice, room-appropriate for college, corporate, and private events.</p>
-      </div>
-      <div class="tape-cta-row">
-        <a href="videos.html" class="tape-link">View tape →</a>
-        <span class="for-bookers">Unlisted · share with your team</span>
-      </div>
+<section class="section band-wash" id="about">
+  <div class="wrap split">
+    <div class="side">
+      <p class="eyebrow">About</p>
+      <h2 class="h2">The working bio.</h2>
+    </div>
+    <div class="main prose">
+      <p>J'myle writes the kind of material that earns the laugh on the second beat, then steals an extra one on the third. Autobiographical without being indulgent. Clever without being cold.</p>
+      <p>The short version: Salt Lake kid, four years in the Navy on a wooden minesweeper in the Western Pacific, a decade working Northwest stages out of Seattle, now back home in Salt Lake. The long version is an hour of stand-up called <a href="salt.html"><em>Twink or Swim</em></a>.</p>
+      <p>He's hosted and featured at Emerald City and Tacoma Comedy Clubs, has performed twice at The Hollywood Comedy Store, and has studied under <strong>Alice Fraser</strong>, <strong>Tiff Stevenson</strong>, and <strong>Andrew Frank</strong>.</p>
     </div>
   </div>
 </section>
 
-<section class="credits" id="credits">
-  <h2>Selected <em>credits</em>.</h2>
-  <div>
-    <ul class="credit-list">
-      <li>
-        <span class="year">2026</span>
-        <span class="item"><a href="salt.html">Great Salt Lake Fringe Festival</a><span class="award">★ Spirit of Fringe Award</span><span class="venue">Solo hour: "Twink or Swim"</span></span>
-      </li>
-      <li>
-        <span class="year">×2</span>
-        <span class="item">The Hollywood Comedy Store · Potluck Show<span class="venue">Selected performer, Los Angeles</span></span>
-      </li>
-      <li>
-        <span class="year ongoing">Ongoing</span>
-        <span class="item">Tacoma Comedy Club<span class="venue">Host &amp; feature</span></span>
-      </li>
-      <li>
-        <span class="year ongoing">Ongoing</span>
-        <span class="item">Emerald City Comedy Club<span class="venue">Host &amp; feature, Seattle</span></span>
-      </li>
-      <li>
-        <span class="year">2012</span>
-        <span class="item">Wiseguys Comedy Club, Trolley Square<span class="venue">First stand-up performance</span></span>
-      </li>
-    </ul>
+<section class="section">
+  <div class="wrap quotes">
+    <blockquote class="quote">
+      <p>“Blends sharp humor with personal history.”</p>
+      <cite><a href="https://www.slugmag.com/arts/art/performance-theatre/jmyle-koretz-dives-into-comedy-with-twink-or-swim/" target="_blank" rel="noopener">SLUG Magazine</a> · July 2026</cite>
+    </blockquote>
+    <blockquote class="quote">
+      <p>“Quite an illuminating show.”</p>
+      <cite>Les Roka, <a href="https://www.theutahreview.com/a-very-robust-first-weekend-12th-great-salt-lake-fringe-festival-resumes-july-30-aug-2-at-four-salt-lake-city-venues/" target="_blank" rel="noopener">The Utah Review</a> · July 2026</cite>
+    </blockquote>
   </div>
 </section>
 
-<section class="booking" id="booking">
-  <div class="booking-inner">
-    <h2>Book the show.</h2>
-    <p>Available for clubs, festivals, private events, and rooms with chairs in them. Honest, prepared, and easy to work with — ask anyone who has.</p>
-    <a href="mailto:inappropriatecontent@gmail.com" class="booking-cta">inappropriatecontent@gmail.com</a>
-    <div class="booking-types">
-      <span>Clubs</span>
-      <span>·</span>
-      <span>Festivals</span>
-      <span>·</span>
-      <span>Corporate</span>
-      <span>·</span>
-      <span>Private Events</span>
+<section class="section-tight" id="credits">
+  <div class="wrap">
+    <h2 class="h2">Credits.</h2>
+    <div class="rows">
+      <div class="row"><span class="k">2026</span><span class="v"><a href="salt.html">Great Salt Lake Fringe</a><span class="award">★ Spirit of Fringe</span></span><span class="n">Solo hour: Twink or Swim</span></div>
+      <div class="row"><span class="k">2026</span><span class="v">Up the Creek · Secret Comedy Club</span><span class="n">London · Brighton</span></div>
+      <div class="row"><span class="k">×2</span><span class="v">The Hollywood Comedy Store · Potluck Show</span><span class="n">Selected performer, Los Angeles</span></div>
+      <div class="row"><span class="k">Host</span><span class="v">Emerald City Comedy Club · Tacoma Comedy Club</span><span class="n">Host &amp; feature, Seattle area</span></div>
+      <div class="row"><span class="k">2012</span><span class="v">Wiseguys Comedy Club, Trolley Square</span><span class="n">First stand-up set, Salt Lake City</span></div>
     </div>
   </div>
 </section>
+</main>
 
-<footer>
-  <div class="footer-grid">
-    <div class="footer-name">J'myle <em>Koretz</em></div>
-    <div class="footer-links">
-      <a href="salt.html">Twink or Swim → the touring hour</a>
-      <a href="videos.html">Tape → for bookers</a>
-      <a href="https://instagram.com/theinappropriatecontent" target="_blank" rel="noopener">Instagram → @theinappropriatecontent</a>
-      <a href="https://facebook.com/inappropriatecontent" target="_blank" rel="noopener">Facebook → inappropriatecontent</a>
-      <a href="mailto:inappropriatecontent@gmail.com">Email → inappropriatecontent@gmail.com</a>
+<section class="section band-navy book" id="booking">
+  <div class="wrap">
+    <div>
+      <h2 class="display">Book the show.</h2>
+      <p>Clubs, festivals, corporate, private events, and rooms with chairs in them. Booked directly, replies same day.</p>
+      <p class="book-types">Clubs · Festivals · Corporate · Private events</p>
     </div>
+    <a href="mailto:inappropriatecontent@gmail.com?subject=Booking%20inquiry" class="btn btn-flag">inappropriatecontent@gmail.com</a>
   </div>
-  <div class="footer-meta">
-    <span>© 2026 J'myle Koretz</span>
-    <span class="url-joke">yes, the URL is on purpose.</span>
-    <span>Seattle · WA</span>
+</section>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <a href="index.html" class="brand"><span class="brand-flag" aria-hidden="true"></span>J'myle Koretz</a>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="salt.html">Twink or Swim</a>
+        <a href="videos.html">Tape</a>
+        <a href="https://instagram.com/theinappropriatecontent" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://facebook.com/inappropriatecontent" target="_blank" rel="noopener">Facebook</a>
+        <a href="mailto:inappropriatecontent@gmail.com">Email</a>
+      </nav>
+    </div>
+    <div class="foot-meta">
+      <span>© 2026 J'myle Koretz</span>
+      <span>yes, the URL is on purpose.</span>
+      <span>Salt Lake City, UT</span>
+    </div>
   </div>
 </footer>
 
