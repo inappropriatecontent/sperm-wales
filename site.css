@@ -1,6 +1,6 @@
 /* =========================================================
    sperm.wales — Signal Flags theme
-   Shared by index.html, salt.html, videos.html
+   Shared by index.html and salt.html
    ========================================================= */
 
 :root {
@@ -54,7 +54,7 @@ a:hover { color: var(--blue); }
 }
 .brand-flag {
   width: 24px; height: 16px; flex: none;
-  background: linear-gradient(90deg, var(--yellow) 50%, var(--blue) 50%);
+  background: linear-gradient(180deg, var(--blue) 33.33%, var(--white) 33.33% 66.67%, var(--blue) 66.67%);
 }
 .nav { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 28px; font-size: 0.95rem; font-weight: 500; }
 .nav a { text-decoration: none; }
@@ -108,27 +108,25 @@ a:hover { color: var(--blue); }
 }
 .portrait img { width: 100%; height: 100%; object-fit: cover; }
 
-/* ===== Signal flag strip (decorative) ===== */
-.flags { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 8px; }
+/* ===== Signal flag strip: J-M-Y-L-E in the International Code of Signals ===== */
+.signal { display: flex; flex-wrap: wrap; align-items: center; gap: 20px 40px; }
+.flags { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; flex: 1 1 320px; max-width: 520px; }
 .flags span { aspect-ratio: 3 / 2; position: relative; display: block; }
-.flags .f1 { background: linear-gradient(90deg, var(--yellow) 50%, var(--blue) 50%); }
-.flags .f2 { background: linear-gradient(135deg, var(--red) 50%, var(--yellow) 50%); }
-.flags .f3 { background: var(--blue); }
-.flags .f3::after { content: ""; position: absolute; inset: 25% 33%; background: var(--white); }
-.flags .f4 { background: conic-gradient(var(--red) 0 25%, var(--white) 0 50%, var(--red) 0 75%, var(--white) 0); box-shadow: inset 0 0 0 1px var(--line); }
-.flags .f5 { background: repeating-linear-gradient(180deg, var(--yellow) 0 20%, var(--blue) 20% 40%); }
-.flags .f6 {
+/* Juliet: blue, white, blue */
+.flags .f-j { background: linear-gradient(180deg, var(--blue) 33.33%, var(--white) 33.33% 66.67%, var(--blue) 66.67%); }
+/* Mike: white saltire on blue */
+.flags .f-m {
   background:
-    linear-gradient(var(--yellow), var(--yellow)) center / 100% 22% no-repeat,
-    linear-gradient(var(--yellow), var(--yellow)) center / 15% 100% no-repeat,
-    var(--red);
+    linear-gradient(to top right, transparent calc(50% - 7px), var(--white) calc(50% - 7px) calc(50% + 7px), transparent calc(50% + 7px)),
+    linear-gradient(to top left, transparent calc(50% - 7px), var(--white) calc(50% - 7px) calc(50% + 7px), transparent calc(50% + 7px)),
+    var(--blue);
 }
-.flags .f7 { background: var(--navy); }
-.flags .f8 { background: repeating-linear-gradient(90deg, var(--yellow) 0 20%, var(--red) 20% 40%); }
-@media (max-width: 560px) {
-  .flags { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-  .flags .f5, .flags .f6, .flags .f7, .flags .f8 { display: none; }
-}
+/* Yankee: yellow and red diagonal stripes */
+.flags .f-y { background: repeating-linear-gradient(to bottom right, var(--yellow) 0 10%, var(--red) 10% 20%); }
+/* Lima: yellow and black quarters */
+.flags .f-l { background: conic-gradient(var(--navy) 0 25%, var(--yellow) 0 50%, var(--navy) 0 75%, var(--yellow) 0); }
+/* Echo: blue over red */
+.flags .f-e { background: linear-gradient(180deg, var(--blue) 50%, var(--red) 50%); }
 
 /* ===== Sections ===== */
 .section { padding-block: clamp(64px, 8vw, 96px); }
@@ -202,6 +200,21 @@ a:hover { color: var(--blue); }
 .frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 .video h3 { margin-top: 18px; font-size: 1.25rem; font-weight: 600; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
 .video p { color: var(--soft); margin-top: 4px; }
+/* ===== Home page tape player: one frame, two sets ===== */
+.tape { scroll-margin-top: 16px; }
+.tape .h2 { margin-bottom: 28px; }
+.set-switch { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.set-btn {
+  font-family: var(--display); font-weight: 800; font-size: clamp(1.25rem, 3vw, 1.75rem); letter-spacing: -0.01em;
+  padding: 18px 16px; border: 2px solid var(--navy); border-radius: 4px;
+  background: transparent; color: var(--navy); cursor: pointer;
+  transition: background .15s, color .15s;
+}
+.set-btn:hover { background: var(--wash); }
+.set-btn[aria-pressed="true"] { background: var(--navy); color: var(--white); }
+.set-btn:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+.tape-note { margin-top: 14px; font-size: 0.95rem; color: var(--soft); }
+
 .tag {
   display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 0.72rem; font-weight: 700;
   letter-spacing: 0.08em; text-transform: uppercase; border: 1.5px solid currentColor;
@@ -248,6 +261,7 @@ a:hover { color: var(--blue); }
   margin-top: 36px; padding-top: 20px; border-top: 1px solid var(--line);
   display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 0.875rem; color: var(--soft);
 }
+.foot-note { margin-top: 12px; font-size: 0.875rem; color: var(--soft); }
 
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
