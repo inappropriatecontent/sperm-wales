@@ -180,6 +180,18 @@ a:hover { color: var(--blue); }
 }
 
 /* spec grid */
+/* Request-only callout (full show recording) */
+.callout {
+  margin-top: 48px; padding: clamp(24px, 4vw, 40px); background: var(--white);
+  border-top: 2px solid var(--navy); scroll-margin-top: 24px;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px 48px;
+}
+.callout > div { flex: 1 1 320px; max-width: 40rem; }
+.callout .h3 { margin: 8px 0 12px; }
+.callout p:not(.eyebrow) { color: var(--soft); }
+.on-navy-link { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.on-navy-link:hover { color: var(--yellow); }
+
 .specs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 2px solid var(--navy); }
 .specs div { padding: 16px 16px 18px 0; border-bottom: 1px solid var(--line); }
 .specs div + div { padding-left: 16px; border-left: 1px solid var(--line); }
