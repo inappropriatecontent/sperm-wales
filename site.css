@@ -212,10 +212,10 @@ a:hover { color: var(--blue); }
 .frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 .video h3 { margin-top: 18px; font-size: 1.25rem; font-weight: 600; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
 .video p { color: var(--soft); margin-top: 4px; }
-/* ===== Home page tape player: one frame, two sets ===== */
+/* ===== Home page tape player: one frame, three sets ===== */
 .tape { scroll-margin-top: 16px; }
 .tape .h2 { margin-bottom: 28px; }
-.set-switch { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.set-switch { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 16px; }
 .set-btn {
   font-family: var(--display); font-weight: 800; font-size: clamp(1.25rem, 3vw, 1.75rem); letter-spacing: -0.01em;
   padding: 18px 16px; border: 2px solid var(--navy); border-radius: 4px;

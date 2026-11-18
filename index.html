@@ -62,18 +62,19 @@
     <h2 class="h2">The tape.</h2>
     <div class="set-switch" role="group" aria-label="Choose a set">
       <button type="button" class="set-btn" data-set="clean" aria-pressed="false">Clean</button>
-      <button type="button" class="set-btn" data-set="blue" aria-pressed="true">Blue</button>
+      <button type="button" class="set-btn" data-set="naval" aria-pressed="true">Naval</button>
+      <button type="button" class="set-btn" data-set="blue" aria-pressed="false">Blue</button>
     </div>
     <div class="frame">
       <iframe id="tape-player"
-        src="https://www.youtube-nocookie.com/embed/5keAHwr9SGQ?rel=0&modestbranding=1"
-        title="J'myle Koretz — club set"
+        src="https://www.youtube-nocookie.com/embed/PrYrddgGwAY?rel=0&modestbranding=1"
+        title="J'myle Koretz — naval set"
         loading="lazy"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         referrerpolicy="strict-origin-when-cross-origin"></iframe>
     </div>
-    <p class="tape-note" id="tape-note" aria-live="polite">Blue set · Adult language, adult themes · Mockingbird Comedy, Seattle · October 2026</p>
+    <p class="tape-note" id="tape-note" aria-live="polite">Naval set · Pre-code · Emerald City Comedy Club, Seattle · July 2026</p>
   </div>
 </section>
 
@@ -161,6 +162,8 @@
   var sets = {
     clean: { id: 'Hfb-e0BdVHU', start: 4, title: "J'myle Koretz — clean set",
              note: 'Clean set · No profanity, corporate-safe · Laughs Comedy Club, Seattle · March 2026' },
+    naval: { id: 'PrYrddgGwAY', title: "J'myle Koretz — naval set",
+             note: 'Naval set · Pre-code · Emerald City Comedy Club, Seattle · July 2026' },
     blue:  { id: '5keAHwr9SGQ', title: "J'myle Koretz — club set",
              note: 'Blue set · Adult language, adult themes · Mockingbird Comedy, Seattle · October 2026' }
   };
@@ -180,8 +183,10 @@
       if (b.getAttribute('aria-pressed') !== 'true') show(b.dataset.set, true);
     });
   });
-  if (location.hash === '#clean') { show('clean', false); document.getElementById('tape').scrollIntoView(); }
-  if (location.hash === '#blue') { document.getElementById('tape').scrollIntoView(); }
+  // Naval is the default tape; #clean or #blue (any case) opens that set instead.
+  var wanted = location.hash.slice(1).toLowerCase();
+  if (wanted === 'clean' || wanted === 'blue') show(wanted, false);
+  if (sets[wanted]) document.getElementById('tape').scrollIntoView();
 })();
 </script>
 
