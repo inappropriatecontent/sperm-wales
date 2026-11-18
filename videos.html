@@ -8,7 +8,8 @@
 <link rel="canonical" href="https://sperm.wales/#tape">
 <script>
 // The tape now lives on the home page. Old #club links open the blue set.
-location.replace('index.html' + (location.hash === '#club' ? '#blue' : location.hash === '#clean' ? '#clean' : '#tape'));
+var h = location.hash.toLowerCase();
+location.replace('index.html' + (h === '#club' || h === '#blue' ? '#blue' : h === '#clean' ? '#clean' : '#tape'));
 </script>
 <meta http-equiv="refresh" content="0; url=index.html#tape">
 </head>
