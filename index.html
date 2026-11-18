@@ -61,19 +61,19 @@
   <div class="wrap">
     <h2 class="h2">The tape.</h2>
     <div class="set-switch" role="group" aria-label="Choose a set">
-      <button type="button" class="set-btn" data-set="clean" aria-pressed="true">Clean</button>
-      <button type="button" class="set-btn" data-set="blue" aria-pressed="false">Blue</button>
+      <button type="button" class="set-btn" data-set="clean" aria-pressed="false">Clean</button>
+      <button type="button" class="set-btn" data-set="blue" aria-pressed="true">Blue</button>
     </div>
     <div class="frame">
       <iframe id="tape-player"
-        src="https://www.youtube-nocookie.com/embed/Hfb-e0BdVHU?rel=0&modestbranding=1&start=4"
-        title="J'myle Koretz — clean set"
+        src="https://www.youtube-nocookie.com/embed/5keAHwr9SGQ?rel=0&modestbranding=1"
+        title="J'myle Koretz — club set"
         loading="lazy"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         referrerpolicy="strict-origin-when-cross-origin"></iframe>
     </div>
-    <p class="tape-note" id="tape-note" aria-live="polite">Clean set · No profanity, corporate-safe · Laughs Comedy Club, Seattle · March 2026</p>
+    <p class="tape-note" id="tape-note" aria-live="polite">Blue set · Adult language, adult themes · Mockingbird Comedy, Seattle · October 2026</p>
   </div>
 </section>
 
@@ -180,8 +180,8 @@
       if (b.getAttribute('aria-pressed') !== 'true') show(b.dataset.set, true);
     });
   });
-  if (location.hash === '#blue') { show('blue', false); document.getElementById('tape').scrollIntoView(); }
-  if (location.hash === '#clean') { document.getElementById('tape').scrollIntoView(); }
+  if (location.hash === '#clean') { show('clean', false); document.getElementById('tape').scrollIntoView(); }
+  if (location.hash === '#blue') { document.getElementById('tape').scrollIntoView(); }
 })();
 </script>
 
